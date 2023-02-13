@@ -58,6 +58,8 @@
 
 ## Flujo de trabajo sugerido
 
+# O nly P hones
+
 ### [ 01 ] Descripción del proyecto
 
 Es un e-commerce (tienda en linea), en donde solo se venden telefonos, el cual te permite comprar y vender, al igual que hacer una comparacion de telefonos en
@@ -65,28 +67,43 @@ cuanto a calidad, precio y caracteristicas.
 
 ### [ 02 ] Requerimientos funcionales
 
-> Registra los requerimientos funcionales considerados para este proyecto, para que no sea tan extenso, puedes dividirlo en [milestones](#definiciones). Por ejemplo: Milestone 1:  Formulario o pantalla para registro de nuevos usuarios. Milestone 2: Pantalla de inicio que muestra un registro de todos los proyectos. Milestone 3: CRUD  de proyectos. No es necesario describir aquí en detalle todas las tareas, sino más bien los módulos o milestones más generales.
-
-- Milestone 1. Configuración inicial del proyecto: Crear estructura base, directorios, agregar librerías...
-- Milestone 2. Título: Descripción
-- Milestone 2. Título: Descripción
+- Milestone 1. Registro de usuarios y vendedores (CRUD)
+- Milestone 2. Probar funcionalidad de la [API](https://docs.device-specs.io/smartphones/api-endpoints)
+- Milestone 3. Sesión y carrito de comprador
+- Milestone 4. Sesión de vendedor
+- Milestone 5. Deploy
+- Milestone 6. Corrección de detalles
 
 ### [ 03 ] Requerimientos no funcionales
 
 > Registra los aspectos no funcionales a considerar como tecnologías, calidad, etc.
+- Tecnologías
+  -  RNF 1. Ruby on Rails versión 7.x.x
+  -  RNF 2. Compilador de estilos SASS
+  -  RNF 3. Framework CSS Bootstrap 5
+  -  RNF 4. PostgreSQL
+  -  RNF 5. MVC
+- Calidad
+  - RNF 6. Rubocop
+  - RNF 7. Rubycritic
+
 
 ### [ 04 ] Plan de trabajo
 
 > Organiza tus requerimientos ó `milestones` de manera calendarizada.
 
-Milestone | WK1 | WK2 | WK3 | WK4 | WK5 | WK6 | WK7 | WK8 | WK9 | WK10 | WK11 | WK12 | WK13 | WK14 | WK15 | WK16
----|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
- #1 | x | x | x
- #2 |   |   | x | x | x
+Milestone | WK1 | WK2 | WK3 | WK4 | WK5 | WK6 | WK7 | WK8 |
+---|---|---|---|---|---|---|---|---|
+ #1 | X | X |   |   |   |   |   |   |
+ #2 |   |   | X |   |   |   |   |   |
+ #3 |   |   | X | X | X |   |   |   |
+ #4 |   |   |   | X | X | X |   |   |
+ #5 |   |   |   |   |   |   | X | X |
+ #6 |   |   |   |   |   |   | X | X |
 
 ### [ 05 ] Diseño de la UI
 
-> Incluye aquí un enlace a tu propuesta de diseño
+> Propuesta de diseño [OnlyPhones](https://www.figma.com/file/OoDhwMGWm2OgPLJEgjWv0D/OnlyPhones?node-id=40%3A221&t=IhxOFbAgRBIH8AJa-1)
 
 ### [ 07 ] Modelo de la base de datos
 
