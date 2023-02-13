@@ -92,14 +92,14 @@ cuanto a calidad, precio y caracteristicas.
 
 > Organiza tus requerimientos ó `milestones` de manera calendarizada.
 
-Milestone | WK1 | WK2 | WK3 | WK4 | WK5 | WK6 | WK7 | WK8 |
----|---|---|---|---|---|---|---|---|
- #1 | X | X |   |   |   |   |   |   |
- #2 |   |   | X |   |   |   |   |   |
- #3 |   |   | X | X | X |   |   |   |
- #4 |   |   |   | X | X | X |   |   |
- #5 |   |   |   |   |   |   | X | X |
- #6 |   |   |   |   |   |   | X | X |
+Milestone | WK1 | WK2 | WK3 | WK4 | WK5 | WK6 | WK7 | WK8 | WK9 |
+---|---|---|---|---|---|---|---|---|---|
+ #1 |   | X | X |   |   |   |   |   |   |
+ #2 |   |   |   | X |   |   |   |   |   |
+ #3 |   |   |   | X | X | X |   |   |   |
+ #4 |   |   |   |   | X | X | X |   |   |
+ #5 |   |   |   |   |   |   |   | X | X |
+ #6 |   |   |   |   |   |   |   | X | X |
 
 ### [ 05 ] Diseño de la UI
 
@@ -111,7 +111,7 @@ Milestone | WK1 | WK2 | WK3 | WK4 | WK5 | WK6 | WK7 | WK8 |
 
 ### [ 08 ] GitHub Planner
 
-> Incluye aquí un enlace a tu GitHub planner
+> [Planner del proyecto](https://github.com/orgs/BrightCoders-Institute/projects/40)
 
 ## Definiciones
 
