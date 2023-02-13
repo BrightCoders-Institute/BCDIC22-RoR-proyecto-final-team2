@@ -60,7 +60,8 @@
 
 ### [ 01 ] Descripción del proyecto
 
-> Escribe una breve descripción que permita entender de que trata este proyecto
+Es un e-commerce (tienda en linea), en donde solo se venden telefonos, el cual te permite comprar y vender, al igual que hacer una comparacion de telefonos en
+cuanto a calidad, precio y caracteristicas.
 
 ### [ 02 ] Requerimientos funcionales
 
