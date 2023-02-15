@@ -107,7 +107,7 @@ Milestone | WK1 | WK2 | WK3 | WK4 | WK5 | WK6 | WK7 | WK8 | WK9 |
 
 ### [ 07 ] Modelo de la base de datos
 
-> Incluye aquí un enlace a tu modelo de base de datos
+[Modelo de Base de Datos](https://dbdiagram.io/d/63e58509296d97641d7fd7cb)
 
 ### [ 08 ] GitHub Planner
 
