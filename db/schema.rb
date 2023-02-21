@@ -10,8 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_20_224305) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "phones", force: :cascade do |t|
+    t.integer "id_especificaciones"
+    t.integer "user_id"
+    t.float "precio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "transaccions", force: :cascade do |t|
+    t.integer "id_comprador"
+    t.integer "id_vendedor"
+    t.integer "telefono_id"
+    t.string "status"
+    t.float "ganancia"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password"
+    t.boolean "permisos_vender"
+    t.boolean "permisos_comprar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "phones", "users"
+  add_foreign_key "transaccions", "phones", column: "id_vendedor"
+  add_foreign_key "transaccions", "phones", column: "telefono_id"
+  add_foreign_key "transaccions", "users", column: "id_comprador"
 end
