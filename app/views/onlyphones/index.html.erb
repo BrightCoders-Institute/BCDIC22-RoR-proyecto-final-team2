@@ -1,44 +1,56 @@
 <main class="main-page">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <h2 class="fw-bolder"> T elefono </h2>
-        <h2 class="fw-bolder"> A leatorio </h2>
-        <br> <br>
-        <button type="button" class="btn button-blue border rounded-3"> Comprar ahora </button>
-        <button type="button"  class="btn btn-outline-dark border border-3 rounded-3"> Ver otro telefono </button>
-      </div>
+  <div class="border-top border-bottom">
+    <div class="container">
+      <div class="row p-5">
+        <div class="col">
+          <h2 class="fw-bolder"> T elefono </h2>
+          <h2 class="fw-bolder"> A leatorio </h2>
+          <br> <br>
+          <button type="button" class="btn button-blue border rounded-3 me-3"> Comprar ahora </button>
+          <button type="button"  class="btn btn-outline-dark border border-3 rounded-3"> Ver otro telefono </button>
+        </div>
 
-      <div class="col">
-        <div class="container">
-          <div class="row">
-              <div class="col"> <a href="#"> <%= image_tag "https://picsum.photos/200", alt: "Telefono"%> </a>  </div>
-              <div class="col mr-1 rounded-bottom bg-dark text-white text-center"> <p> Precio $$  </p> </div>
+        <div class="col">
+          <div class="container">
+            <div class="d-flex">
+                <div class=""> <a href="#"> <%= image_tag "https://picsum.photos/200", alt: "Telefono"%> </a>  </div>
+                <div class="price-figure text-white text-center align-self-end"> <p class="p-3 text-center"> Precio $$  </p> </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div> 
+      </div> 
+    </div>
   </div>
 
-  <div class="marcas d-flex justify-content-evenly align-items-center">
-    <a href="#"> <%= image_tag "apple-logo.png", alt: "Apple"%></a>
-    <a href="#"> <%= image_tag "samsung-logo.png", alt: "Samsung"%></a>
-    <a href="#"> <%= image_tag "xiaomi-logo.png", alt: "Xiaomi"%></a>
-    <a href="#"> <%= image_tag "motorola-logo.png", alt: "Motorola"%></a>
+  <div class="marcas d-flex justify-content-evenly align-items-center container p-2">
+    <a href="#"> <%= image_tag "apple-logo.png", alt: "Apple", class: "p-5"%></a>
+    <a href="#"> <%= image_tag "samsung-logo.png", alt: "Samsung", class: "p-5"%></a>
+    <a href="#"> <%= image_tag "xiaomi-logo.png", alt: "Xiaomi", class: "p-5"%></a>
+    <a href="#"> <%= image_tag "motorola-logo.png", alt: "Motorola", class: "p-5"%></a>
   </div>
 
-  <div class="phones">
-    <h2>L os mejores C elulares </h2>
-    <div> <%= render 'partials/mejorescelulares' %> </div>
+  <div class="phones ps-5">
+    <div class="fs-2 fw-bold d-flex">
+      <p class="fw-bolder pe-2">L</p>   
+      <p class="fw-normal pe-2">os mejores </p>
+      <p class="fw-bolder pe-2">C</p>
+      <p class="fw-normal">elulares</p>
+    </div>
+    <div class="p-5"> <%= render 'partials/mejorescelulares' %> </div>
   </div>
 
-  <div class="ofertas p-5">
+  <div class="ofertas p-2">
     <div class="card">
-      <%= image_tag "ofertas-background.png", alt: "Ofertas", class: "card-img"%>
+      <%= image_tag "ofertas-background.png", alt: "Ofertas", class: ""%>
       <div class="card-img-overlay m-4 d-flex align-items-center justify-content-center flex-column">
-        <h5 class="card-title fs-3 text-danger fw-bold">O fertas en C elulares</h5>
-        <p class="card-text fs-6 text-light">Lo mejor y con descuentos</p>
-        <button class="btn btn-danger">Ver Ofertas</button>
+        <div class="card-title fs-1 ofertas-color fw-bold d-flex">
+          <p class="fw-bolder pe-2">O</p>   
+          <p class="fw-normal pe-2">fertas</p>
+          <p class="fw-bolder pe-2">en C</p>
+          <p class="fw-normal">elulares</p>
+        </div>
+        <p class="card-text fs-5 text-light fw-light">Lo mejor y con descuentos</p>
+        <button class="btn btn-danger ofertas-button">Ver Ofertas</button>
       </div>
     </div>
   </div>
