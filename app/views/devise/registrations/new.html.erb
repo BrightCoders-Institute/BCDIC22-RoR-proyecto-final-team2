@@ -27,7 +27,11 @@
   </div>
 
   <div class="field">
-    <%= f.select :permisos_vender, ['Vendedor', 'Comprador']%>
+    <%= f.label :Comprador %>
+    <%= f.radio_button :permisos_comprar, "1", name: "permisos", required: true %>
+    <%= f.label :Vendedor %>
+    <%= f.radio_button :permisos_vender, "0", name: "permisos", required: true %>
+
   </div>
 
   <div class="actions">

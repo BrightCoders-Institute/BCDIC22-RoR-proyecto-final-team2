@@ -6,13 +6,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   # def new
-  #   super
+  #   @user = User.new
   # end
 
-  # POST /resource
-  # def create
-  #   super
-  # end
+  # # POST /resource
+  def create
+    super do |user|
+
+      if params[:permisos] == "1"
+        user.permisos_comprar = true
+        user.permisos_vender = false
+      else
+        user.permisos_comprar = false
+        user.permisos_vender = true
+      end
+
+      user.save
+    end
+  end
 
   # GET /resource/edit
   # def edit
@@ -21,7 +32,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   # def update
-  #   super
+  #   @user = User.find(params[:id])
+  #   if @user.update(sing_up_params)
+  #     # La actualización se realizó correctamente
+  #   else
+  #     # Hubo un error al actualizar
+  #   end
   # end
 
   # DELETE /resource
@@ -46,7 +62,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   def sign_up_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :permisos_vender)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :permisos_comprar, :permisos_vender)
+  end
+
+  def account_update_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :current_password)
   end
 
   # If you have extra params to permit, append them to the sanitizer.
