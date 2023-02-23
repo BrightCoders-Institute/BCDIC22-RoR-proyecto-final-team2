@@ -1,0 +1,40 @@
+:root {
+  --main-blue: #0619C1;
+  --white-color: #fff;
+  --black-color: #000;
+}
+
+
+//Logo Styles
+.logo{
+  font-size: 1.5em;
+}
+.logo-bold{
+  font-weight: bold;
+}
+.logo-normal{
+  font-weight: normal;
+}
+
+//a links without styles
+a:link, a:visited, a:active {
+  color: var(--black-color);
+  text-decoration:none;
+}
+
+//Style button-blue
+.button-blue{
+  background-color: var(--main-blue);
+  color: var(--white-color);
+}
+.button-blue:hover{
+  background-color: var(--white-color);
+  border: var(--main-blue) 1px solid;
+  color: var(--main-blue);
+}
+
+//div telefono random
+.mr-1 {
+    margin-right: ($spacer * 5.0) !important;
+  }
+  

@@ -10,12 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
 */
- @import 'bootstrap';
+  @import 'bootstrap';
 
- @use 'abstracts/*';
- @use 'vendors/*';
- @use 'base/*';
- @use 'layout/*';
- @use 'components/*';
- @use 'pages/*';
- @use 'themes/*';
+  @import 'abstracts/*';
+  @import 'vendors/*';
+  @import 'base/*';
+  @import 'layout/*';
+  @import 'components/*';
+  @import 'pages/*';
+  @import 'themes/*';

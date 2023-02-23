@@ -1,13 +1,26 @@
 <main class="main-page">
-  <div class="telefono-random">
-    <h2> Telefono Aleatorio </h2>
-    <button type="button"> Comprar ahora </button>
-    <button type="button"> Ver otro telefono </button>
-    <a href="#"> <%= image_tag "https://picsum.photos/200", alt: "Telefono"%> </a>
-    <div> <p> Precio $$  </p> </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="fw-bolder"> T elefono </h2>
+        <h2 class="fw-bolder"> A leatorio </h2>
+        <br> <br>
+        <button type="button" class="btn button-blue border rounded-3"> Comprar ahora </button>
+        <button type="button"  class="btn btn-outline-dark border border-3 rounded-3"> Ver otro telefono </button>
+      </div>
+
+      <div class="col">
+        <div class="container">
+          <div class="row">
+              <div class="col"> <a href="#"> <%= image_tag "https://picsum.photos/200", alt: "Telefono"%> </a>  </div>
+              <div class="col mr-1 rounded-bottom bg-dark text-white text-center"> <p> Precio $$  </p> </div>
+          </div>
+        </div>
+      </div>
+    </div> 
   </div>
 
-  <div class="marcas">
+  <div class="marcas d-flex justify-content-evenly align-items-center">
     <a href="#"> <%= image_tag "apple-logo.png", alt: "Apple"%></a>
     <a href="#"> <%= image_tag "samsung-logo.png", alt: "Samsung"%></a>
     <a href="#"> <%= image_tag "xiaomi-logo.png", alt: "Xiaomi"%></a>
@@ -19,13 +32,14 @@
     <div> <%= render 'partials/mejorescelulares' %> </div>
   </div>
 
-  <div class="ofertas">
-    <div class="card text-bg-dark">
-    <%= image_tag "ofertas-background.png", alt: "Apple", class: "card-img"%>
-    <div class="card-img-overlay">
-      <h5 class="card-title">O fertas en C elulares</h5>
-      <p>Lo mejor y con descuentos</p>
-      <button>Ver Ofertas</button>
+  <div class="ofertas p-5">
+    <div class="card">
+      <%= image_tag "ofertas-background.png", alt: "Ofertas", class: "card-img"%>
+      <div class="card-img-overlay m-4 d-flex align-items-center justify-content-center flex-column">
+        <h5 class="card-title fs-3 text-danger fw-bold">O fertas en C elulares</h5>
+        <p class="card-text fs-6 text-light">Lo mejor y con descuentos</p>
+        <button class="btn btn-danger">Ver Ofertas</button>
+      </div>
     </div>
   </div>
 </main>
