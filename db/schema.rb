@@ -38,8 +38,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_21_234627) do
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.boolean "permisos_vender", default: true
-    t.boolean "permisos_comprar"
+    t.boolean "permisos_vender"
+    t.boolean "permisos_comprar", default: true
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
