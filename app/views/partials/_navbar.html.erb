@@ -7,8 +7,8 @@
   </div>
 
   <div>
-    <a href="#"><i class="fa-regular fa-user"></i> Inicia Sesion</a>
-    <a href="#">Registrate</a>
+    <a href="/users/sign_in"><i class="fa-regular fa-user"></i></a><%= link_to "Inicia Sesión", new_user_session_path() %>
+    <%= link_to "Registrate", new_user_registration_path() %>
     <a href="#"><i class="fa-solid fa-cart-shopping"></i> Carrito</a>
   </div>
 </header>
