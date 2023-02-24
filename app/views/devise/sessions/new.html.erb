@@ -1,9 +1,13 @@
-<%# div para el contenedor principal %>
-<div>
-  <%# div para colocar la imagen de la izquierda %>
-  <div></div>
-  <%# div para insertar el formulario %>
-  <div>
-    <%= render 'form' %>
+<div class="container-xl my-4">
+  <%# div para el contenedor principal %>
+  <div class="row justify-content-center align-items-center">
+    <%# div para colocar la imagen de la izquierda %>
+    <div class="col-md-6">
+      <%= image_tag("login.jpg", alt: "employee image", class: 'img-fluid rounded') %>
+    </div>
+    <%# div para insertar el formulario %>
+    <div class="col-md-6 px-5">
+      <%= render 'form' %>
+    </div>
   </div>
 </div>
