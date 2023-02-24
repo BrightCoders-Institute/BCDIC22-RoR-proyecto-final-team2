@@ -1,6 +1,6 @@
-<h2 class="fw-bold text-center">Iniciar Sesión</h2>
+<h2 class="fw-bold text-center mt-4 mt-md-0">Iniciar Sesión</h2>
 
-<div class="border py-3 d-flex align-items-center flex-column justify-content-center rounded">
+<div class="border py-3 d-flex align-items-center flex-column justify-content-center rounded bg-white">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field my-3">
       <%= f.label :email, 'Correo', class: 'fw-bold' %><br />

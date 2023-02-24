@@ -1,0 +1,9 @@
+.login-img{
+  height: 10rem;
+  width: 100%;
+  object-fit: cover;
+  @include media-breakpoint-up(md){
+    height: 100%;
+  }
+ 
+}

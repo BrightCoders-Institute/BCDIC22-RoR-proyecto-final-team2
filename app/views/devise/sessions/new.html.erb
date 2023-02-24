@@ -3,11 +3,14 @@
   <div class="row justify-content-center align-items-center">
     <%# div para colocar la imagen de la izquierda %>
     <div class="col-md-6">
-      <%= image_tag("login.jpg", alt: "employee image", class: 'img-fluid rounded') %>
+      <%= image_tag("login.jpg", alt: "login image", class: 'img-fluid rounded login-img') %>
     </div>
     <%# div para insertar el formulario %>
-    <div class="col-md-6 px-5">
-      <%= render 'form' %>
+    <div class="col-md-6 px-5 circles">
+      <div id="black-circle"></div>
+      <%= render 'form', class: 'login-form' %>
+      <div id="blue-circle"></div>
     </div>
   </div>
+  
 </div>
