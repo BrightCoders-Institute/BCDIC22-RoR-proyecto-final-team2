@@ -6,14 +6,22 @@
   margin-top: 50px;
 }
 
+.sign-up-img{
+  align-content:stretch;
+  height: 100%;    
+  object-fit: cover;
+  overflow:hidden;
+  width: 100%;
+}
+
 main > h2 {
   color: #0619C1;
 }
 
 .sign-up-form {
   border-radius: 10px;
-  box-shadow: 0 0 5px 2px rgba(1, 24, 89, 0.575);
-  flex: 2.5;
+  box-shadow: 0 0 5px 2px rgba(2, 37, 133, 0.575);
+  flex: 2;
   padding: 30px 80px;
   text-align: center;
 }
@@ -25,9 +33,10 @@ main > h2 {
 }
 
 .sidebar {
-  border: 2px solid red;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 2px rgba(2, 37, 133, 0.575);
   flex: 1.5;
-  margin-right: 80px;
+  margin-right: 40px;
 }
 
 .form-group {
@@ -41,7 +50,7 @@ main > h2 {
 .sign-form-field {
   border: 1px solid;
   border-color: black;
-  box-shadow: 0 0 1px 1px rgba(1, 24, 89, 0.575);
+  box-shadow: 0 0 1px 1px rgba(2, 37, 133, 0.575);
   height: 40px;
   margin: 0 auto;
   padding: 0 10px;
