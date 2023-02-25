@@ -1,0 +1,36 @@
+
+.sign-up-body {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  margin-top: 50px;
+}
+
+.sign-up-form {
+  flex: 2.5;
+  text-align: center;
+}
+
+.sidebar {
+  border: 2px solid red;
+  flex: 1.5;
+}
+
+.form-group{
+  border: 1px solid red;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+p.access-text{
+  border: 1px solid red;
+}
+
+.link{
+  border: 1px solid red;
+}
+
+// .access-text,
+// .link {
+
+// }

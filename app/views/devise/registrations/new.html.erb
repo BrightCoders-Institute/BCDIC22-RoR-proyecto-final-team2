@@ -1,46 +1,43 @@
-<main class="container form w-50 text-center">
-  <h2>Sign up</h2>
+<div class="sign-up-body container">
+  <aside class="sidebar">Sidebar</aside>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+  <main class="sign-up-form">
+    <h2>Registrate</h2>
 
-    <div class="form-group">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "w-50" %>
-    </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="form-group">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-50" %>
-    </div>
+      <div class="form-group">
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Nombre" %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password", class: "w-50" %>
-    </div>
+      <div class="form-group">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Correo" %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-50" %>
-    </div>
+      <div class="form-group">
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Contraseña (al menos 6 caracteres)" %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :Comprador %>
-      <%= f.radio_button :permisos_comprar, "1", name: "permisos", required: true %>
-      <%= f.label :Vendedor %>
-      <%= f.radio_button :permisos_vender, "0", name: "permisos", required: true %>
-    </div>
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirma tu contraseña" %>
+      </div>
 
-    <div class="actions">
-      <%= f.submit "Sign up", class: "btn btn-primary" %>
-    </div>
-  <% end %>
+      <div class="form-group">
+        <select name="permisos">
+          <option value="">--</option>
+          <option value="1" selected="selected">Comprador</option>
+          <option value="2">Vendedor</option>
+        </select>
+      </div>
 
-  <%= render "devise/shared/links" %>
+      <div class="actions">
+        <%= f.submit "Registrate", class: "btn btn-primary" %>
+      </div>
+    <% end %>
 
-</main>
+    <%= render "devise/shared/links" %>
 
-<aside class="sidebar w-50 border border-danger">Sidebar</aside>
+  </main>
+
+</div>
