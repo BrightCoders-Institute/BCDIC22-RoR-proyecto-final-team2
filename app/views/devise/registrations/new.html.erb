@@ -8,31 +8,31 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="form-group">
-        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Nombre" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Nombre", class: "sign-form-field" %>
       </div>
 
       <div class="form-group">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Correo" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Correo", class: "sign-form-field" %>
       </div>
 
       <div class="form-group">
-        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Contraseña (al menos 6 caracteres)" %>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Contraseña (al menos 6 caracteres)", class: "sign-form-field" %>
       </div>
 
       <div class="form-group">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirma tu contraseña" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirma tu contraseña", class: "sign-form-field" %>
       </div>
 
       <div class="form-group">
-        <select name="permisos">
-          <option value="">--</option>
-          <option value="1" selected="selected">Comprador</option>
+        <select name="permisos" , class="sign-form-field">
+          <option value="">Selecciona una opción</option>
+          <option value="1">Comprador</option>
           <option value="2">Vendedor</option>
         </select>
       </div>
 
       <div class="actions">
-        <%= f.submit "Registrate", class: "btn btn-primary" %>
+        <%= f.submit "Registrarse", class: "btn btn-primary sign-btn" %>
       </div>
     <% end %>
 

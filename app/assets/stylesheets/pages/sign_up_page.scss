@@ -6,31 +6,60 @@
   margin-top: 50px;
 }
 
+main > h2 {
+  color: #0619C1;
+}
+
 .sign-up-form {
+  border-radius: 10px;
+  box-shadow: 0 0 5px 2px rgba(1, 24, 89, 0.575);
   flex: 2.5;
+  padding: 30px 80px;
   text-align: center;
+}
+
+.btn-primary.sign-btn {
+  background-color: #0619C1;
+  color: #fff;
+  width: 150px;
 }
 
 .sidebar {
   border: 2px solid red;
   flex: 1.5;
+  margin-right: 80px;
 }
 
-.form-group{
-  border: 1px solid red;
+.form-group {
+  align-items: center;
+  display: flex;
+  height: 50px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-p.access-text{
-  border: 1px solid red;
+.sign-form-field {
+  border: 1px solid;
+  border-color: black;
+  box-shadow: 0 0 1px 1px rgba(1, 24, 89, 0.575);
+  height: 40px;
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 300px;
 }
 
-.link{
-  border: 1px solid red;
+p.access-text {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
-// .access-text,
-// .link {
+.link {
+  color: #0619C1;
+  font-weight: bold;
+  text-decoration: none;
+}
 
-// }
+.link:visited {
+  color: #0619C1;
+}
