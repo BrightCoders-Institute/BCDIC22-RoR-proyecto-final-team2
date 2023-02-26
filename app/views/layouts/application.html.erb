@@ -12,12 +12,10 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
     <%= render 'partials/navbar' %>
     <%= render 'partials/littlemenu' %>
-
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= render 'partials/footer' %>
   </body>
