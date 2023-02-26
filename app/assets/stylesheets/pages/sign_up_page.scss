@@ -10,7 +10,7 @@
 .sidebar {
   border-radius: 10px;
   box-shadow: 0 0 2px 2px rgba(2, 37, 133, 0.575);
-  flex: 1.5;
+  flex: 2;
   margin-right: 40px;
 }
 
@@ -34,23 +34,25 @@
 }
 
 //form title
-main > h2 {
-  color: #0619C1;
+h2.sign-up-title {
+  color: black;
+  margin-bottom: 20px;
 }
 
 //form group container
 .form-group {
   align-items: center;
-  display: flex;
-  height: 50px;
+  display: block;
+  height: 70px;
   margin-top: 20px;
   margin-bottom: 20px;
+  text-align: start;
+  width: 300px;
 }
 
 //form fields
 .sign-form-field {
-  border: 1px solid;
-  border-color: black;
+  border: 1px transparent;
   box-shadow: 0 0 1px 1px rgba(2, 37, 133, 0.575);
   height: 40px;
   margin: 0 auto;
@@ -62,6 +64,7 @@ main > h2 {
 .btn-primary.sign-btn {
   background-color: #0619C1;
   color: #fff;
+  margin-top: 30px;
   width: 150px;
 }
 
