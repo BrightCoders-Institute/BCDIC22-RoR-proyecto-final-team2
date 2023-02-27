@@ -1,32 +1,51 @@
-<h2>Sign up</h2>
+<div class="sign-up-body container">
+  <aside class="sidebar">
+    <%= image_tag "sign-up.jpg", alt: "Sign up", class: "img-fluid sign-up-img"%>
+  </aside>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="sign-up-section text-center">
+    <h2 class="fw-bold mt-4 mt-md-0 sign-up-title">Registrate</h2>
+    <main class="sign-up-form">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
+        <div class="form-group">
+          <%= f.label :name, 'Nombre', class: 'fw-bold d-block' %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Ingresa tu nombre aquí", class: "sign-form-field rounded" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+        <div class="form-group">
+          <%= f.label :email, 'Correo', class: 'fw-bold d-block' %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Ingresa tu correo aquí", class: "sign-form-field rounded" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+        <div class="form-group">
+          <%= f.label :password, 'Contraseña (al menos 6 caracteres)', class: 'fw-bold' %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "Ingresa tu contraseña aquí", class: "sign-form-field rounded" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, 'Confirma tu contraseña', class: 'fw-bold' %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Ingresa tu contraseña aquí", class: "sign-form-field rounded" %>
+        </div>
 
-  <div class="field">
+        <div class="form-group">
+          <%= f.label :selecciona_una_opción, class: 'fw-bold' %>
+          <select name="permisos" , class="sign-form-field rounded">
+            <option value="1">Comprador</option>
+            <option value="2">Vendedor</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Registrarse", class: "btn btn-primary sign-btn" %>
+        </div>
+      <% end %>
+
+
+    </main>
+    <%= render "devise/shared/links" %>
+    <div class="field">
     <%= f.label :Comprador %>
     <%= f.radio_button :permisos_comprar, "1", name: "permisos", required: true %>
     <%= f.label :Vendedor %>
@@ -37,6 +56,5 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+</div>

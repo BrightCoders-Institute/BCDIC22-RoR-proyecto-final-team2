@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # # POST /resource
   def create
     super do |user|
-
+      # pp params[user[:permisos]]
       if params[:permisos] == "1"
         user.permisos_comprar = true
         user.permisos_vender = false
