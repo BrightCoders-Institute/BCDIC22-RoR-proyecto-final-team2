@@ -1,9 +1,20 @@
 <section>
-  <div>
-    <%= image_tag "https://picsum.photos/200", alt: "Telefono"%>
-    <p>Nombre del telfono</p>
-    <p>Descripcion</p>
-    <p>Precio</p>
-    <button type="button"> Comprar</button>
+  <div class="div-mejorescelulares d-inline-flex flex-column">
+    <div  class="p-3 border border-dark rounded-4 d-flex justify-content-center">
+      <%= image_tag "https://picsum.photos/200", alt: "Telefono", class: " py-2"%>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm pt-4">
+          <p class="fw-bolder">Nombre del telfono</p>
+          <p class="font-weight-lighter"> Descripcion</p>
+          <p class="fw-bolder">Precio</p>
+        </div>
+        <div class="col-sm d-flex align-self-end">
+          <button type="button" class="mt-0 btn btn-dark border border-3 rounded-4"> Comprar</button>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
