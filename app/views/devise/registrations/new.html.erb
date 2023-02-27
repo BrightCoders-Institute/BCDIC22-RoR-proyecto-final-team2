@@ -42,8 +42,19 @@
         </div>
       <% end %>
 
+
     </main>
     <%= render "devise/shared/links" %>
+    <div class="field">
+    <%= f.label :Comprador %>
+    <%= f.radio_button :permisos_comprar, "1", name: "permisos", required: true %>
+    <%= f.label :Vendedor %>
+    <%= f.radio_button :permisos_vender, "0", name: "permisos", required: true %>
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
   </div>
 
 </div>
