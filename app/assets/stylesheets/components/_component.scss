@@ -1,0 +1,41 @@
+//Colors to use
+:root {
+  --main-blue: #0619C1;
+  --white-color: #fff;
+  --black-color: #000;
+  --red-color: #FF0000;
+}
+
+
+	@@ -33,8 +35,31 @@ a:link, a:visited, a:active {
+  color: var(--main-blue);
+}
+
+//Styles of price figure
+.price-figure{
+  background-color: var(--black-color);
+  border-radius: 0px 0px 100px 0px;
+  height: 30%;
+  width: 22%;
+}
+
+//Styles of ofertas
+.ofertas-button{
+  background-color: var(--red-color);
+  border-radius: 50px 0px 50px 50px;
+}
+.ofertas-color{
+  color: var(--red-color);
+}
+
+//style of mejorescelulares
+.p-3{
+  padding: $spacer;
+}
+.mt-0{
+  margin-top: 20px;
+}
+.div-mejorescelulares{
+  align-self: start;
+  margin-left: 20px;
+}
