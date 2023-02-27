@@ -4,8 +4,10 @@
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <p>¿Aún no tienes una cuenta?</p>
-  <%= link_to "Click aquí para crear una", new_registration_path(resource_name) %><br />
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <p class="mb-0 mt-3">¿Aún no tienes una cuenta?</p>
+    <%= link_to "Click aquí para crear una", new_registration_path(resource_name), class: "text-decoration-none" %><br />
+  </div>
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
