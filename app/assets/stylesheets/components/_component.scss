@@ -4,38 +4,62 @@
   --white-color: #fff;
   --black-color: #000;
   --red-color: #FF0000;
-}
-
-
-a:link, a:visited, a:active {
+  }
+  
+  
+  //Logo Styles
+  .logo{
+  font-size: 1.5em;
+  }
+  .logo-bold{
+  font-weight: bold;
+  }
+  .logo-normal{
+  font-weight: normal;
+  }
+  
+  //a links without styles
+  a:link, a:visited, a:active {
+  color: var(--black-color);
+  text-decoration:none;
+  }
+  
+  //Style button-blue
+  .button-blue{
+  background-color: var(--main-blue);
+  color: var(--white-color);
+  }
+  .button-blue:hover{
+  background-color: var(--white-color);
+  border: var(--main-blue) 1px solid;
   color: var(--main-blue);
-}
-
-//Styles of price figure
-.price-figure{
+  }
+  
+  //Styles of price figure
+  .price-figure{
   background-color: var(--black-color);
   border-radius: 0px 0px 100px 0px;
   height: 30%;
   width: 22%;
-}
-
-//Styles of ofertas
-.ofertas-button{
+  }
+  
+  //Styles of ofertas
+  .ofertas-button{
   background-color: var(--red-color);
   border-radius: 50px 0px 50px 50px;
-}
-.ofertas-color{
+  }
+  .ofertas-color{
   color: var(--red-color);
-}
-
-//style of mejorescelulares
-.p-3{
+  }
+  
+  //style of mejorescelulares
+  .p-3{
   padding: $spacer;
-}
-.mt-0{
+  }
+  .mt-0{
   margin-top: 20px;
-}
-.div-mejorescelulares{
+  }
+  .div-mejorescelulares{
   align-self: start;
   margin-left: 20px;
-}
+  }
