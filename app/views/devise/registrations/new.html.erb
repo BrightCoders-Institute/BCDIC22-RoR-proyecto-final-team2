@@ -3,9 +3,10 @@
     <%= image_tag "sign-up.jpg", alt: "Sign up", class: "img-fluid sign-up-img"%>
   </aside>
 
-  <div class="sign-up-section text-center">
+  <div class="sign-up-section text-center col-md-6 px-5 circles">
     <h2 class="fw-bold mt-4 mt-md-0 sign-up-title">Registrate</h2>
-    <main class="sign-up-form">
+    <div id="black-circle"></div>
+    <main class="sign-up-form border">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -41,20 +42,9 @@
           <%= f.submit "Registrarse", class: "btn btn-primary sign-btn" %>
         </div>
       <% end %>
-
-
     </main>
+    <div id="blue-circle"></div>
     <%= render "devise/shared/links" %>
-    <div class="field">
-    <%= f.label :Comprador %>
-    <%= f.radio_button :permisos_comprar, "1", name: "permisos", required: true %>
-    <%= f.label :Vendedor %>
-    <%= f.radio_button :permisos_vender, "0", name: "permisos", required: true %>
-
   </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-
 </div>
+

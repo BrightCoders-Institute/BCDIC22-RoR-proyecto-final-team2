@@ -14,8 +14,8 @@
   </div>
 
   <div>
-    <a href="/users/sign_in"><i class="fa-regular fa-user"></i></a><%= link_to "Inicia Sesión", new_user_session_path() %>
-    <%= link_to "Registrate", new_user_registration_path() %>
-    <a href="#"><i class="fa-solid fa-cart-shopping"></i> Carrito</a>
+    <div class="p-3 d-inline-flex align-items-center"><i class="fa-regular fa-user p-1"></i><%= link_to "Inicia Sesión", new_user_session_path() %></div>
+    <%= link_to "Registrate", new_user_registration_path(), class: "p-3" %>
+    <a href="#" class="p-3"><i class="fa-solid fa-cart-shopping"></i> Carrito</a>
   </div>
 </header>
