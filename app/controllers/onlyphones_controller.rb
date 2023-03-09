@@ -13,7 +13,6 @@ class OnlyphonesController < ApplicationController
   private
   def request_api
     url = "https://api.device-specs.io/api/smartphones/1"
-    puts API_KEY
     response = RestClient.get(url, {Authorization: "Bearer #{API_KEY}"})
     JSON.parse(response.to_str)
   end
