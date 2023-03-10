@@ -10,6 +10,7 @@ module BCDIC22RorProyectoFinalTeam2
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.autoload_paths << Rails.root.join('lib/ruby/gems/3.2.0/gems/rest-client-2.1.0')
 
     # Configuration for the application, engines, and railties goes here.
     #

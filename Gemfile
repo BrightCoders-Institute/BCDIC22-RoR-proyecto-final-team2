@@ -76,3 +76,5 @@ gem "bootstrap", "~> 5.2"
 gem "devise", "~> 4.9"
 
 gem "sass-rails", "~> 6.0"
+
+gem "rest-client"
