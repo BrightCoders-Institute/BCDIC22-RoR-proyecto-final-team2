@@ -11,16 +11,25 @@ class OnlyphonesController < ApplicationController
 
   def random
     rd = rand 1..2597
-    random_phone = request_api(rd)
+    params[:id] = rd
+    random_phone = request_api
     name = random_phone['data']['name']
     price = random_phone['data']['prices'][0]['price']
-    img = random_phone['data']['images'][0]['url']
+    begin
+      img = random_phone['data']['images'][0]['url']
+    rescue NoMethodError => e
+      if e.message.include?("undefined method `[]' for nil:NilClass") 
+        img = "https://picsum.photos/200" 
+      else
+        img = random_phone['data']['images'][0]['url']
+      end
+    end
     [name, price, img]
   end
 
   private
-  def request_api(id_phone="")
-    url = "https://api.device-specs.io/api/smartphones/#{id_phone}?populate=*"
+  def request_api
+    url = "https://api.device-specs.io/api/smartphones/#{params[:id]}?populate=*"
     response = RestClient.get(url, {Authorization: "Bearer #{API_KEY}"})
     JSON.parse(response.to_str)
   end

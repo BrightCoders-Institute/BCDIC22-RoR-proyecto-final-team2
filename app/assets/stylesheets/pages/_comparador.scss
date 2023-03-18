@@ -1,0 +1,25 @@
+:root {
+  --main-blue: #0619C1;
+}
+
+//Style border-blue
+.border-blue{
+  border: var(--main-blue) 2px solid;
+}
+
+//Style background-blue
+.bg-blue{
+  background-color: var(--main-blue);
+}
+
+//Limitator of a image
+.img-limitator {
+  width: 150px;
+  height: 150px; 
+}
+
+.img-limitator img {
+  max-width: 100%; 
+  max-height: 100%; 
+}
+
