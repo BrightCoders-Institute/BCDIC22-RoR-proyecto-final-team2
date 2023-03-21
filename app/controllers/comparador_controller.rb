@@ -17,5 +17,13 @@ class ComparadorController < OnlyphonesController
     @camara = comparador_data['data']['data']['camera']['camera_back__mp']
     @procesador = comparador_data['data']['data']['cpu']['type']
     @so = comparador_data['data']['data']['software']['os']
+    @name_list = nameList
+    puts nameList
   end
+
+  def nameList
+    params[:id]=""
+    list_id_name = request_api
+  end
+
 end
