@@ -1,57 +1,58 @@
-<div class="device-info-header">
-  <h2 class="text-center fw-bold">Información del dispositivo</h2>
-</div>
-
-<div class="device-box border">
-
-  <div class="device-preview-container">
-    <div class="border device-preview">
-      <%= image_tag "#{@phone_img}", alt: "#{@phone['data']['name']}" %>
-      <h3><%= @phone['data']['name'] %></h3>
-      <p><span>Modelo:</span> <%= @phone['data']['mpn'] %></p>
-      <p><span>SO: </span><%= @phone['data']['data']['software']['os'] %></p>
-      <p><span>Precio: </span><%= @price.to_s + ' ' +  @currency %></p>
-    </div>
+<div class="container border">
+  <div class="device-info-header">
+    <h2 class="text-center fw-bold">Información del dispositivo</h2>
   </div>
 
-  <div class="device-info-col-one">
-    <div class="">
-      <h4>Pantalla</h4>
-      <p><span>Tipo de pantalla:</span> <%= @phone['data']['data']['display']['type'] %></p>
-      <p><span>Tamaño:</span> <%= @phone['data']['data']['display']['size__inch'] %> pulgadas</p>
-      <p><span>Resolucion:</span> <%= @phone['data']['data']['display']['resolution__pixels'] %> pixeles</p>
+  <div class="device-box">
+    <div class="device-preview-container border">
+      <div class="device-preview">
+        <%= image_tag "#{@phone_img}", alt: "#{@phone['data']['name']}", class: "device-img" %>
+        <h3><%= @phone['data']['name'] %></h3>
+        <p><span>Modelo:</span> <%= @phone['data']['mpn'] %></p>
+        <p><span>SO: </span><%= @phone['data']['data']['software']['os'] %></p>
+        <p><span>Precio: </span><%= @price.to_s + ' ' +  @currency %></p>
+      </div>
     </div>
 
-    <div class="">
-      <h4>Cámara</h4>
-      <p><span>Cámara principal:</span> <%= @phone['data']['data']['camera']['camera_back__mp'] %> mp</p>
-      <p><span>Cámara frontal:</span> <%= @phone['data']['data']['camera']['camera_front__mp'] %> mp</p>
-      <p><span>Zoom digital:</span> <%= @phone['data']['data']['camera']['camera_back_digital_zoom'] %></p>
+    <div class="device-info-col-one">
+      <div>
+        <h4>Pantalla</h4>
+        <p><span>Tipo de pantalla:</span> <%= @phone['data']['data']['display']['type'] %></p>
+        <p><span>Tamaño:</span> <%= @phone['data']['data']['display']['size__inch'] %> pulgadas</p>
+        <p><span>Resolucion:</span> <%= @phone['data']['data']['display']['resolution__pixels'] %> pixeles</p>
+      </div>
+
+      <div>
+        <h4>Cámara</h4>
+        <p><span>Cámara principal:</span> <%= @phone['data']['data']['camera']['camera_back__mp'] %> mp</p>
+        <p><span>Cámara frontal:</span> <%= @phone['data']['data']['camera']['camera_front__mp'] %> mp</p>
+        <p><span>Zoom digital:</span> <%= @phone['data']['data']['camera']['camera_back_digital_zoom'] %></p>
+      </div>
+
+      <div>
+        <h4>Hardware</h4>
+        <p><span>Tipo:</span> <%= @phone['data']['data']['cpu']['type'] %></p>
+        <p><span>Núcleos:</span> <%= @phone['data']['data']['cpu']['number_of_cores'] %> </p>
+        <p><span>Almacenamiento interno:</span> <%= @phone['data']['data']['storage']['capacity__gb'] %> GB</p>
+        <p><span>Memoria:</span> <%= @phone['data']['data']['storage']['compatible_memory_cards'] %> </p>
+      </div>
+
     </div>
 
-    <div class="">
-      <h4>Hardware</h4>
-      <p><span>Tipo:</span> <%= @phone['data']['data']['cpu']['type'] %></p>
-      <p><span>Núcleos:</span> <%= @phone['data']['data']['cpu']['number_of_cores'] %> </p>
-      <p><span>Almacenamiento interno:</span> <%= @phone['data']['data']['storage']['capacity__gb'] %> GB</p>
-      <p><span>Memoria:</span> <%= @phone['data']['data']['storage']['compatible_memory_cards'] %> </p>
-    </div>
+    <div class="device-info-col-two">
+      <div>
+        <h4>Conectividad</h4>
+        <p><span>Bluetooth:</span> <%= @phone['data']['data']['network']['bluetooth_version'] %></p>
+        <p><span>Red:</span> <%= @phone['data']['data']['network']['generation_mobile_network'] %> </p>
+        <p><span>Tarjeta SIM:</span> <%= @phone['data']['data']['network']['type_sim_card'] %></p>
+        <p><span>Tipo USB:</span> <%= @phone['data']['data']['ports_interfaces']['type_of_connector'] %> </p>
+      </div>
 
-  </div>
-
-  <div class="device-info-col-two">
-    <div class="">
-      <h4>Conectividad</h4>
-      <p><span>Bluetooth:</span> <%= @phone['data']['data']['network']['bluetooth_version'] %></p>
-      <p><span>Red:</span> <%= @phone['data']['data']['network']['generation_mobile_network'] %> </p>
-      <p><span>Tarjeta SIM:</span> <%= @phone['data']['data']['network']['type_sim_card'] %></p>
-      <p><span>Tipo USB:</span> <%= @phone['data']['data']['ports_interfaces']['type_of_connector'] %> </p>
-    </div>
-
-    <div class="">
-      <h4>Batería</h4>
-      <p><span>Tipo:</span> <%= @phone['data']['data']['battery']['technology'] %></p>
-      <p><span>Capacidad:</span> <%= @phone['data']['data']['battery']['capacity__mAh'] %> mAh</p>
+      <div>
+        <h4>Batería</h4>
+        <p><span>Tipo:</span> <%= @phone['data']['data']['battery']['technology'] %></p>
+        <p><span>Capacidad:</span> <%= @phone['data']['data']['battery']['capacity__mAh'] %> mAh</p>
+      </div>
     </div>
   </div>
 </div>
