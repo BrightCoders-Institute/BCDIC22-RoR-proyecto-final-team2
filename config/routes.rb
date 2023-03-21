@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   get 'home/index', to: 'home#index'
+  resources :onlyphones
 
   # Defines the root path route ("/")
   root "onlyphones#index"

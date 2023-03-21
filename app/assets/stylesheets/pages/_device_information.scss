@@ -1,0 +1,33 @@
+.device-box{
+  align-items: flex-start;
+  display: flex;
+  height: 600px;
+  justify-content: space-around;
+  padding: 25px;
+  margin: 0 50px 50px 50px;
+}
+
+.device-preview-container {
+  align-items: center;
+  border: 2px solid black;
+  width: 33%;
+}
+
+.device-preview{
+  height: 100%;
+}
+
+.device-info-col-one{
+  border: 2px solid red;
+
+}
+
+.device-info-col-two{
+  border: 2px solid blue;
+
+}
+
+.device-info-header{
+  border: 2px solid green;
+  margin: 25px 50px 0 50px;
+}
