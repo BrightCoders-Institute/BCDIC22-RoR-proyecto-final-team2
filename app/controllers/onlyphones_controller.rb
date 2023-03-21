@@ -8,9 +8,9 @@ class OnlyphonesController < ApplicationController
     @phones = request_api
     @random_phone = random
   end
-  
+
   def show
-    @phone = request_api(params[:id])
+    @phone = request_api
     @phone_img = @phone['data']['images'][0]['url']
     @price = @phone['data']['prices'][0]['price']
     @currency = @phone['data']['prices'][0]['currency']
@@ -25,8 +25,8 @@ class OnlyphonesController < ApplicationController
     begin
       img = random_phone['data']['images'][0]['url']
     rescue NoMethodError => e
-      if e.message.include?("undefined method `[]' for nil:NilClass") 
-        img = "https://picsum.photos/200" 
+      if e.message.include?("undefined method `[]' for nil:NilClass")
+        img = "https://picsum.photos/200"
       else
         img = random_phone['data']['images'][0]['url']
       end
