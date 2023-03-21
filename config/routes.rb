@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   }
   get 'home/index', to: 'home#index'
   resources :onlyphones
+  get 'comparador/:id', to: 'comparador#index'
 
-  # Defines the root path route ("/")
   root "onlyphones#index"
 end

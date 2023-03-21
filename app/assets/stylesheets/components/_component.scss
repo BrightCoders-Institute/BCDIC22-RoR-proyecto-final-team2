@@ -30,6 +30,12 @@ a:link, a:visited, a:active {
   border: var(--main-blue) 1px solid;
   color: var(--main-blue);
 }
+
+//max-width
+.max-width-phones{
+  width: 20em;
+}
+
 //Styles of price figure
 .price-figure{
   background-color: var(--black-color);

@@ -2,19 +2,20 @@
   <div class="border-top border-bottom">
     <div class="container">
       <div class="row p-5">
-        <div class="col">
-          <h2 class="fw-bolder"> T elefono </h2>
-          <h2 class="fw-bolder"> A leatorio </h2>
+        <div class="col d-flex flex-column justify-content-center">
+          <h2 class="fw-bolder"> <%= @random_phone[0] %></h2>
           <br> <br>
-          <button type="button" class="btn button-blue border rounded-3 me-3"> Comprar ahora </button>
-          <button type="button"  class="btn btn-outline-dark border border-3 rounded-3"> Ver otro telefono </button>
+          <div class="buutons-group d-flex">
+            <button type="button" class="btn button-blue border rounded-3 me-3"> Comprar ahora </button>
+            <%= button_to "Ver otro telefono", request.original_url, method: :get, class: "btn btn-outline-dark border border-3 rounded-3" %>
+          </div>
         </div>
 
         <div class="col">
           <div class="container">
             <div class="d-flex">
-                <div class=""> <a href="#"> <%= image_tag "https://picsum.photos/200", alt: "Telefono"%> </a>  </div>
-                <div class="price-figure text-white text-center align-self-end"> <p class="p-3 text-center"> Precio $$  </p> </div>
+                <%= @random_phone[2] ? ( image_tag "#{@random_phone[2]}", alt: "Telefono", class: "max-width-phones" ) : ( image_tag "https://picsum.photos/200", alt: "Telefono", class: "w-50") %>
+                <div class="price-figure text-white text-center align-self-end"> <p class="p-3 text-center"> $ <%= @random_phone[1] %></p></div>
             </div>
           </div>
         </div>
