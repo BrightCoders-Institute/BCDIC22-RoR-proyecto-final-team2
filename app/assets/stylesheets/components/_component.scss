@@ -62,3 +62,19 @@ a:link, a:visited, a:active {
   align-self: start;
   margin-left: 20px;
 }
+
+//style of marcas
+.brand-1{
+  border-bottom: 2px solid #0619C1;
+  font-weight: bold;
+}
+
+//Limitator of a image
+.img-limitator {
+  height: 245px;
+  width: 245px;
+}
+.img-limitator img {
+  max-height: 100%;
+  max-width: 100%;
+}

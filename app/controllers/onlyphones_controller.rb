@@ -5,10 +5,12 @@ require_relative "./api_key"
 class OnlyphonesController < ApplicationController
 
   def index
-    @phones = request_api
-    @random_phone = random
+   @phones = request_api
+   @item_ids = itemid
+   @random_phone = random
+   @best_phones = bestphones
   end
-
+  
   def show
     @phone = request_api
     @phone_img = @phone['data']['images'][0]['url']
@@ -25,8 +27,8 @@ class OnlyphonesController < ApplicationController
     begin
       img = random_phone['data']['images'][0]['url']
     rescue NoMethodError => e
-      if e.message.include?("undefined method `[]' for nil:NilClass")
-        img = "https://picsum.photos/200"
+      if e.message.include?("undefined method `[]' for nil:NilClass") 
+        img = "https://picsum.photos/200" 
       else
         img = random_phone['data']['images'][0]['url']
       end
@@ -34,10 +36,50 @@ class OnlyphonesController < ApplicationController
     [name, price, img]
   end
 
+  def request_bestphones
+    itemid
+    responses = []
+    itemid.each do |id|
+      params[:id] = id
+      response = request_api
+      responses << response
+      end
+    responses
+  end
+
+  def bestphones
+    phones = request_bestphones
+    array_phones = []
+    for i in 0..7
+      name = phones[i]['data']['name']
+      price = phones[i]['data']['prices'][0]['price']
+        begin
+          img = phones[i]['data']['images'][0]['url']
+          rescue NoMethodError => e
+          if e.message.include?("undefined method `[]' for nil:NilClass")
+           img = "https://picsum.photos/200"
+          else
+           img = phones[i]['data']['images'][0]['url']
+          end
+        end
+       array_phones << [name, price, img]       
+    end
+    array_phones
+  end
+
   private
+  def itemid
+    id_array = []
+      for i in 1..8
+        id_array.push(rand 1..2597)
+      end
+      id_array
+    end
+
   def request_api
     url = "https://api.device-specs.io/api/smartphones/#{params[:id]}?populate=*"
     response = RestClient.get(url, {Authorization: "Bearer #{API_KEY}"})
     JSON.parse(response.to_str)
   end
 end
+

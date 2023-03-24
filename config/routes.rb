@@ -3,8 +3,10 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   get 'home/index', to: 'home#index'
-  resources :onlyphones
   get 'comparador/:id', to: 'comparador#index'
+  get 'marcas', to: 'marcas#index'
+  resources :onlyphones
 
   root "onlyphones#index"
 end
+

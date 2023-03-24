@@ -37,8 +37,11 @@
       <p class="fw-bolder pe-2">C</p>
       <p class="fw-normal">elulares</p>
     </div>
-    <div class="p-5"> <%= render 'partials/mejorescelulares' %> </div>
-  </div>
+    <div class="container">
+      <div class="d-flex flex-row justify-content-evenly">
+        <div> <%= render 'partials/mejorescelulares' %> </div>
+      </div>
+    </div>
 
   <div class="ofertas p-2">
     <div class="card">
@@ -54,6 +57,6 @@
         <button class="btn btn-danger ofertas-button">Ver Ofertas</button>
       </div>
     </div>
-    <%= puts @name, @id%>
   </div>
 </main>
+
