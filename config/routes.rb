@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   }
   get 'home/index', to: 'home#index'
   get 'comparador/:id', to: 'comparador#index', as: 'comparador'
+  get 'comparador/:id', to: 'comparador#index'
 
   root "onlyphones#index"
 end

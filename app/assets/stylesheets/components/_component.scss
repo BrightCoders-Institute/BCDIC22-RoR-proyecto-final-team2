@@ -29,6 +29,7 @@ a:link, a:visited, a:active {
   background-color: var(--white-color);
   border: var(--main-blue) 1px solid;
   color: var(--main-blue);
+  cursor: pointer;
 }
 
 //max-width
@@ -61,4 +62,16 @@ a:link, a:visited, a:active {
 .div-mejorescelulares{
   align-self: start;
   margin-left: 20px;
+}
+
+//delete styles of li
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li:hover{
+  background-color: var(--main-blue);
+  color: white;
+  cursor: pointer;
 }

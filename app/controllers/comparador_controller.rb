@@ -22,10 +22,9 @@ class ComparadorController < OnlyphonesController
     query = params[:query]
     if query
       list = list_to_search(query)
-      @results = list
-    else
-      @results = ["Buscar telefono a comparar"]
+      @results = list.uniq
     end
+    puts request.url
   end
 
   def compareInfo
@@ -59,8 +58,9 @@ class ComparadorController < OnlyphonesController
     list = []
     data_list = request_list['data']
     data_list.each do |element|
+      id = element['id']
       name = element['name']
-      list << [name]
+      list << [id, name]
     end
     list
   end
