@@ -18,6 +18,14 @@ class ComparadorController < OnlyphonesController
     @procesador = comparador_data['data']['data']['cpu']['type']
     @so = comparador_data['data']['data']['software']['os'] 
     @compare_info =compareInfo
+
+    query = params[:query]
+    if query
+      list = list_to_search(query)
+      @results = list
+    else
+      @results = ["Buscar telefono a comparar"]
+    end
   end
 
   def compareInfo
@@ -45,4 +53,15 @@ class ComparadorController < OnlyphonesController
     [img_to_compare, nombre_to_compare, precio_to_compare, pantalla_to_compare, memoria_to_compare, camara_to_compare, procesador_to_compare, so_to_compare]
   end
 
+  def list_to_search(query="")
+    filter = query
+    request_list = request_api_filters(filter)
+    list = []
+    data_list = request_list['data']
+    data_list.each do |element|
+      name = element['name']
+      list << [name]
+    end
+    list
+  end
 end

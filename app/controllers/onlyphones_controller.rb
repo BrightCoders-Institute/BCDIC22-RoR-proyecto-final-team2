@@ -33,4 +33,11 @@ class OnlyphonesController < ApplicationController
     response = RestClient.get(url, {Authorization: "Bearer #{API_KEY}"})
     JSON.parse(response.to_str)
   end
+
+  def request_api_filters(filter)
+    url = "https://api.device-specs.io/api/smartphones?filters[name][$containsi]=#{filter}"
+    response = RestClient.get(url, {Authorization: "Bearer #{API_KEY}"})
+    JSON.parse(response.to_str)
+  end
+
 end
