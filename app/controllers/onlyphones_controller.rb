@@ -10,6 +10,13 @@ class OnlyphonesController < ApplicationController
    @random_phone = random
    @best_phones = bestphones
   end
+  
+  def show
+    @phone = request_api
+    @phone_img = @phone['data']['images'][0]['url']
+    @price = @phone['data']['prices'][0]['price']
+    @currency = @phone['data']['prices'][0]['currency']
+  end
 
   def random
     rd = rand 1..2597
@@ -33,7 +40,8 @@ class OnlyphonesController < ApplicationController
     itemid
     responses = []
     itemid.each do |id|
-      response = request_api(id)
+      params[:id] = id
+      response = request_api
       responses << response
       end
     responses
@@ -68,10 +76,10 @@ class OnlyphonesController < ApplicationController
       id_array
     end
 
-  def request_api(id_phone="")
-    params[:id]=id_phone
+  def request_api
     url = "https://api.device-specs.io/api/smartphones/#{params[:id]}?populate=*"
     response = RestClient.get(url, {Authorization: "Bearer #{API_KEY}"})
     JSON.parse(response.to_str)
   end
 end
+
