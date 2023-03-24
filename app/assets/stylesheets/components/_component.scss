@@ -62,3 +62,14 @@ a:link, a:visited, a:active {
   align-self: start;
   margin-left: 20px;
 }
+
+//Limitator of a image
+.img-limitator {
+  height: 245px;
+  width: 245px;
+}
+  
+.img-limitator img {
+  max-height: 100%;
+  max-width: 100%;
+}
