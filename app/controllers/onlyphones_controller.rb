@@ -33,7 +33,8 @@ class OnlyphonesController < ApplicationController
     itemid
     responses = []
     itemid.each do |id|
-      response = request_api(id)
+      params[:id]=id
+      response = request_api
       responses << response
       end
     responses
@@ -68,8 +69,7 @@ class OnlyphonesController < ApplicationController
       id_array
     end
 
-  def request_api(id_phone="")
-    params[:id]=id_phone
+  def request_api
     url = "https://api.device-specs.io/api/smartphones/#{params[:id]}?populate=*"
     response = RestClient.get(url, {Authorization: "Bearer #{API_KEY}"})
     JSON.parse(response.to_str)
