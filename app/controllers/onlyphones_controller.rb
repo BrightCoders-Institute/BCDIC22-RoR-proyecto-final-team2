@@ -10,6 +10,13 @@ class OnlyphonesController < ApplicationController
    @random_phone = random
    @best_phones = bestphones
   end
+  
+  def show
+    @phone = request_api
+    @phone_img = @phone['data']['images'][0]['url']
+    @price = @phone['data']['prices'][0]['price']
+    @currency = @phone['data']['prices'][0]['currency']
+  end
 
   def random
     rd = rand 1..2597
@@ -33,7 +40,7 @@ class OnlyphonesController < ApplicationController
     itemid
     responses = []
     itemid.each do |id|
-      params[:id]=id
+      params[:id] = id
       response = request_api
       responses << response
       end
