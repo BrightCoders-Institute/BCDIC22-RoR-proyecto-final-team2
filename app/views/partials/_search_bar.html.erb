@@ -9,8 +9,8 @@
     <ul class="m-1 list-inline w-75">
       <% @results.each do |result| %>
         <li class="p-2 bg-opacity-10 border rounded w-75 list-inline-item align-middle">
-          <%= params[:id2] = result[0]%>
-          <%= link_to "Producto #{result.join(" ")}": "/#{current.uri}/#{params[id:2]}" %>
+          <%= puts result[0]%>
+          <%= link_to "Producto #{result.join(" ")}", compare_path(id2: result[0]) %>
         </li>
       <% end %>
     </ul>

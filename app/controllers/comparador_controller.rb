@@ -17,18 +17,20 @@ class ComparadorController < OnlyphonesController
     @camara = comparador_data['data']['data']['camera']['camera_back__mp']
     @procesador = comparador_data['data']['data']['cpu']['type']
     @so = comparador_data['data']['data']['software']['os'] 
-    @compare_info =compareInfo
+    
+    @compare_info = compareInfo
 
     query = params[:query]
     if query
       list = list_to_search(query)
       @results = list.uniq
     end
-    puts request.url
+    
   end
 
   def compareInfo
-    id_to_compare = 2591
+    id2 = params[:id2]
+    id_to_compare = id2.to_i
     params[:id] = id_to_compare
 
     info_to_compare = request_api
