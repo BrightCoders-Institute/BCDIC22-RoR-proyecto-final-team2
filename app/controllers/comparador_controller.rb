@@ -18,7 +18,10 @@ class ComparadorController < OnlyphonesController
     @procesador = comparador_data['data']['data']['cpu']['type']
     @so = comparador_data['data']['data']['software']['os'] 
     
-    @compare_info = compareInfo
+    @id2 = params[:id2]
+    if @id2 != nil 
+      @compare_info = compareInfo
+    end
 
     query = params[:query]
     if query
@@ -29,9 +32,7 @@ class ComparadorController < OnlyphonesController
   end
 
   def compareInfo
-    id2 = params[:id2]
-    id_to_compare = id2.to_i
-    params[:id] = id_to_compare
+    params[:id] = @id2
 
     info_to_compare = request_api
     begin
