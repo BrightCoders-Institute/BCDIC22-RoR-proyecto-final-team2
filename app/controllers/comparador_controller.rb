@@ -20,7 +20,7 @@ class ComparadorController < OnlyphonesController
     
     @id2 = params[:id2]
     if @id2 != nil 
-      @compare_info = compareInfo
+      @compare_info = compare_data
     end
 
     query = params[:query]
@@ -31,7 +31,7 @@ class ComparadorController < OnlyphonesController
     
   end
 
-  def compareInfo
+  def compare_data
     params[:id] = @id2
 
     info_to_compare = request_api
