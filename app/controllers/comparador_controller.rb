@@ -18,12 +18,12 @@ class ComparadorController < OnlyphonesController
     @procesador = comparador_data['data']['data']['cpu']['type']
     @so = comparador_data['data']['data']['software']['os'] 
     
-    @id2 = params[:id2]
+    @id2 = comparador_params[:id2]
     if @id2 != nil 
       @compare_info = compare_data
     end
 
-    query = params[:query]
+    query = comparador_params[:query]
     if query
       list = list_to_search(query)
       @results = list.uniq
@@ -32,8 +32,7 @@ class ComparadorController < OnlyphonesController
   end
 
   def compare_data
-    params[:id] = @id2
-
+    params[:id] = comparador_params[:id2]
     info_to_compare = request_api
     begin
       img_to_compare = info_to_compare['data']['images'][0]['url']
@@ -66,5 +65,11 @@ class ComparadorController < OnlyphonesController
       list << [id, name]
     end
     list
+  end
+  
+  private
+  
+  def comparador_params
+    params.permit(:id2, :query)
   end
 end
