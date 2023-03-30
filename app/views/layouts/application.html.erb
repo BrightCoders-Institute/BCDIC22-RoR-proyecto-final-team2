@@ -19,8 +19,8 @@
   <body>
     <%= render 'partials/navbar' %>
     <%= render 'partials/littlemenu' %>
-    <%= notice%></p>
-    <%= alert %></p>
+    <% if notice %><div class="alert alert-info text-center"><%= notice %></div><% end %>
+    <% if alert %><div class="alert alert-warning text-center"><%= alert %></div><% end %>
     <%= yield %>
     <%= render 'partials/footer' %>
   </body>
