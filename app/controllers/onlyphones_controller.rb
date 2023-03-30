@@ -82,4 +82,3 @@ class OnlyphonesController < ApplicationController
     JSON.parse(response.to_str)
   end
 end
-
