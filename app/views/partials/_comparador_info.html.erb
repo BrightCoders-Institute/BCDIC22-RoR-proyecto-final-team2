@@ -1,8 +1,13 @@
 <section> 
-  <% icon_1 = @results_algorithm[0][0]%>
-  <% icon_2 = @results_algorithm[1][0]%>
-  <% icon_3 = @results_algorithm[2][0]%>
-  <% icon_4 = @results_algorithm[3][0]%>
+  <% 
+  icon_1, icon_2, icon_3, icon_4 = 'minus', 'minus', 'minus', 'minus'
+  if @results_algorithm != nil 
+    icon_1 = @results_algorithm[0][0]
+    icon_2 = @results_algorithm[1][0]
+    icon_3 = @results_algorithm[2][0]
+    icon_4 = @results_algorithm[3][0]
+  end 
+  %>
   <div class="d-inline-flex flex-column">
     <div class="border-blue rounded-3 d-inline-flex flex-column align-items-center my-5 px-3 pt-3">
       <div class="img-limitator">

@@ -21,6 +21,7 @@ class ComparadorController < OnlyphonesController
     @id2 = comparador_params[:id2]
     if @id2 != nil 
       @compare_info = compare_data
+      @results_algorithm = compare_algorithm
     end
 
     query = comparador_params[:query]
@@ -28,10 +29,7 @@ class ComparadorController < OnlyphonesController
       list = list_to_search(query)
       @results = list.uniq
     end
-
-    @results_algorithm = compare_algorithm
-    print @results_algorithm
-
+    
   end
 
   def compare_algorithm
