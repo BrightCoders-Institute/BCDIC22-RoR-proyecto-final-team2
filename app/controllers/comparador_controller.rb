@@ -29,25 +29,39 @@ class ComparadorController < OnlyphonesController
       @results = list.uniq
     end
 
-    compare_algorithm
+    @results_algorithm = compare_algorithm
+    print @results_algorithm
 
   end
 
   def compare_algorithm
-    compare("precio", 2)
-    compare("pantalla", 3)
-    compare("memoria", 4)
-    compare("camara", 5)
+    compare_results = []
+    compare_results << compare("precio", 2)
+    compare_results << compare("pantalla", 3)
+    compare_results << compare("memoria", 4)
+    compare_results << compare("camara", 5)
+    compare_results
   end
   
   def compare(feature, index)
-    if instance_variable_get("@#{feature}") < @compare_info[index]
-      puts "el primero es mejor"
-    elsif instance_variable_get("@#{feature}") > @compare_info[index]
-      puts "el segundo es mejor"
-    else
-      puts "es un empate"
+    if feature == "precio"
+      if instance_variable_get("@#{feature}") < @compare_info[index]
+        result = ['check','xmark']
+      elsif instance_variable_get("@#{feature}") > @compare_info[index]
+        result = ['xmark','check']
+      else
+        result = ['xmark','check']
+      end
+    else  
+      if instance_variable_get("@#{feature}") > @compare_info[index]
+        result = ['check','xmark']
+      elsif instance_variable_get("@#{feature}") < @compare_info[index]
+        result = ['xmark','check']
+      else
+        result = ['check','check']
+      end
     end
+    result
   end
 
   def compare_data
