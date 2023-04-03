@@ -4,15 +4,11 @@ require_relative "./api_key"
 class MarcasController < OnlyphonesController
 
   def index
-    @phone_brand1 = brands("Apple") 
-    @phone_brand2 = brands("Samsung")
-    @phone_brand3 = brands("Xiaomi")
-    @phone_brand4 = brands("Oppo")
-    @phone_brand5 = brands("Motorola")
-    @phone_brand6 = brands("Google")
-    @phone_brand7 = brands("Huawei") 
+    phone_brands.each_with_index do |brand, i|
+      instance_variable_set("@phone_brand#{i+1}", brands(brand.to_s.capitalize))
+    end
   end
-
+    
   def brands(brand_filter)
     phones = request_api_filters(brand_filter)
     array_brands = []
@@ -39,5 +35,10 @@ class MarcasController < OnlyphonesController
       array_brands << [name, price, img]
     end
     array_brands
+  end
+
+  private
+  def phone_brands
+    %i[apple samsung xiaomi motorola oppo google huawei]
   end
 end
