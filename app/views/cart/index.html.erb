@@ -1,6 +1,6 @@
 <main  class="container">
     <div class="d-flex"> 
-        <div class="d-flex justify-content-between flex-column flex-fill mx-3">
+        <div class="d-flex justify-content-between flex-column flex-grow-1 mx-3">
             <div class="d-inline-flex justify-content-between border-bottom border-3"> 
                 <div class="fw-bold d-flex">
                     <p class="fw-bolder pe-2">P</p>   
@@ -27,14 +27,20 @@
                 <button type="button" class="btn btn-outline-danger rounded-4 p-3"> Limpiar carrito </button>
             </div>
         </div>
-        <div class="border border-dark flex-fill mx-3">
-            <div>
-                <p>Total</p>
+        <div class="border border-dark d-flex flex-column align-items-center w-25">
+            <div class="border border-dark fw-bolder fs-4 w-100 text-center">
+                Total
             </div>
-            <div>
-                <p>Subtotal</p>
-                <p>Subtotal</p>
-                <button type="button" class="btn btn-success rounded-4 px-4"> Proceder al pago </button>
+            <div class="m-3 w-75">
+                <div class="d-flex justify-content-between border-bottom border-3   
+                    <p class="fs-6 fw-bolder">Subtotal</p>
+                    <p>$ 23.20</p>
+                </div>
+                <div class="d-flex justify-content-between">   
+                    <p class="fs-6 fw-bolder">Total a pagar</p>
+                    <p>$ 23.20</p>
+                </div>
+                <button type="button" class="btn btn-success rounded-4 w-100"> Proceder al pago </button>
             </div>     
         </div>
     </div>
