@@ -83,11 +83,9 @@ class OnlyphonesController < ApplicationController
   end
 
   def request_api_filters(filter)
-    url = "https://api.device-specs.io/api/smartphones?filters[name][$containsi]=#{filter}"
+    url = "https://api.device-specs.io/api/smartphones?filters[$and][0][name][$contains]=#{filter}&populate=*"
     response = RestClient.get(url, {Authorization: "Bearer #{API_KEY}"})
     JSON.parse(response.to_str)
   end
 
 end
-
-
