@@ -21,6 +21,7 @@ class ComparadorController < OnlyphonesController
     @id2 = comparador_params[:id2]
     if @id2 != nil 
       @compare_info = compare_data
+      @results_algorithm = compare_algorithm
     end
 
     query = comparador_params[:query]
@@ -29,6 +30,36 @@ class ComparadorController < OnlyphonesController
       @results = list.uniq
     end
     
+  end
+
+  def compare_algorithm
+    compare_results = []
+    compare_results << compare("precio", 2)
+    compare_results << compare("pantalla", 3)
+    compare_results << compare("memoria", 4)
+    compare_results << compare("camara", 5)
+    compare_results
+  end
+  
+  def compare(feature, index)
+    if feature == "precio"
+      if instance_variable_get("@#{feature}") < @compare_info[index]
+        result = ['check','xmark']
+      elsif instance_variable_get("@#{feature}") > @compare_info[index]
+        result = ['xmark','check']
+      else
+        result = ['xmark','check']
+      end
+    else  
+      if instance_variable_get("@#{feature}") > @compare_info[index]
+        result = ['check','xmark']
+      elsif instance_variable_get("@#{feature}") < @compare_info[index]
+        result = ['xmark','check']
+      else
+        result = ['check','check']
+      end
+    end
+    result
   end
 
   def compare_data
