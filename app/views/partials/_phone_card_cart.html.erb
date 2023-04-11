@@ -1,26 +1,27 @@
 <section class="w-100">
-	<div class="d-flex justify-content-between p-4 w-100">
-		<div class="d-flex justify-content-start w-25">
-			<div class="img-cart-limitator">
-				<%= image_tag "#{@phone_in_cart_img }" , alt: "Telefono" %>
-			</div>
-			<div class="align-self-center">
-				<%= @phone_in_cart_name %>
-			</div>
-		</div>
-		<div class="align-self-center d-flex justify-content-start w-25 ps-5"> <b> $ <%= @phone_in_cart_price %></b> </div>
-		<div class="align-self-center d-flex justify-content-center w-25 ps-5">
-			<div class="btn-group" role="group" aria-label="Basic example">
-				<button type="button" class="btn btn-secondary">-</button>
-				<div class="bg bg-secondary text-white">
-					<div class="align-self-center px-3">1</div>
-				</div>
-				<button type="button" class="btn btn-secondary">+</button>
-			</div>
-		</div>
-		<div class="d-flex justify-content-end w-25">
-			<div class="align-self-center mx-2"><b> $ <%= @phone_in_cart_price %></b></div>
-			<div class="btn btn-outline-danger rounded-circle align-self-center">X</div>
-		</div>
-	</div>
+  <div class="d-flex justify-content-between p-4 w-100">
+    <div class="d-flex justify-content-start w-25">
+      <div class="img-cart-limitator">
+        <%= image_tag "#{@phone_in_cart_img }" , alt: "Telefono" %>
+      </div>
+      <div class="align-self-center">
+        <%= @phone_in_cart_name %>
+      </div>
+    </div>
+    <div class="align-self-center d-flex justify-content-start w-25 ps-5"> <b> $ <%= @phone_in_cart_price %></b> </div>
+    <div class="align-self-center d-flex justify-content-center w-25 ps-5">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary">-</button>
+        <div class="bg bg-secondary text-white">
+          <div class="align-self-center px-3">1</div>
+        </div>
+        <button type="button" class="btn btn-secondary">+</button>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end w-25">
+      <div class="align-self-center mx-2"><b> $ <%= @phone_in_cart_price %></b></div>
+      <div class="btn btn-outline-danger rounded-circle align-self-center">X</div>
+    </div>
+  </div>
 </section>
+
