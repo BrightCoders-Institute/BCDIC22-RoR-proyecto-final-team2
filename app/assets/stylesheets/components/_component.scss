@@ -90,3 +90,70 @@ li:hover{
   max-height: 100%;
   max-width: 100%;
 }
+
+//Seller phones
+.button-yellow{
+  background-color: #C89137;
+  color: var(--white-color);
+}
+.seller-border{
+  border: none;
+  box-shadow: 5px 0 5px -2px #888;
+  height: auto;
+  position: relative;
+}
+.button-pos{
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  margin-bottom: 10px;
+  position: absolute;
+  transform: translateX(-50%);
+  width:160px; 
+}
+.profile-pic{
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+.title{
+ border-bottom: 1.5px solid #ebeff2;
+ font-size: 2em;
+ font-weight: bold;
+}
+.seller-card{
+  border: 1.5px solid #ebeff2;
+  border-radius: 5px;
+}
+.phones-size-seller{
+  width: 4em;
+}
+.gray-font{
+  color: #90A0B7;
+  font-size: .8em;
+  margin-top: 0;
+}
+.img-limitator-sell {
+  height: 170px;
+}
+.sm-sell{
+  color:#0D6EFD;
+}
+.logo-seller{
+  font-weight: normal;
+  margin-right: 15px;
+}
+.s-title{
+  font-weight: bold;
+}
+.s-title2{
+  font-weight: bold;
+  padding-left: 40px;
+} 
+.logo-normal-v1{
+  font-weight: normal;
+  margin-bottom: 0; 
+}

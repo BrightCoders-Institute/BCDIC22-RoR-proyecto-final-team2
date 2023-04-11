@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'comparador/:id', to: 'comparador#index', as: 'comparador'
   get 'comparador/:id/:id2', to: 'comparador#index', as: 'compare'
   get 'marcas', to: 'marcas#index'
+  get 'seller', to: 'seller#index'
   resources :onlyphones
   root "onlyphones#index"
 end
