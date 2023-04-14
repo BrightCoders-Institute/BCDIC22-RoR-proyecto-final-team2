@@ -11,13 +11,14 @@
 		<div class="align-self-center d-flex justify-content-start w-25 ps-5"> <b> $ <%= @phone_in_cart_price %></b> </div>
 		<div class="align-self-center d-flex justify-content-center w-25 ps-5">
 			<div class="btn-group" role="group" aria-label="Basic example">
-      <%= button_to 'Decrease', decrease_carrito_path, method: :post %>
-				<div class="bg bg-secondary text-white">
-					<div class="align-self-center px-3">
-            <p><%= @counter %></p>
+        <button id="decrement" type="button" class="btn btn-primary">-</button>
+        <div class="bg bg-primary text-white">
+          <div class="align-self-center px-3 pt-1" id="contador">
+            <%= session[:counter] %>
           </div>
-				</div>
-      <%= button_to 'Increase', increase_carrito_path, method: :post %>
+        </div>
+        <button id="increment" type="button" class="btn btn-primary border border-primary rounded-end">+</button>     
+        <%= javascript_include_tag 'counter.js' %>
 			</div>
 		</div>
 		<div class="d-flex justify-content-end w-25">

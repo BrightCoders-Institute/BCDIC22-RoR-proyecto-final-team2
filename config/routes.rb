@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'counter/index'
+  get 'contador/index'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -7,8 +9,8 @@ Rails.application.routes.draw do
   get 'comparador/:id/:id2', to: 'comparador#index', as: 'compare'
   get 'marcas', to: 'marcas#index'
   get 'carrito', to: 'cart#index'
-  post 'carrito/increase' => 'cart#increase', as: 'increase_carrito'
-  post 'carrito/decrease' => 'cart#decrease', as: 'decrease_carrito'
+  post 'increment', to: 'cart#increment'
+  post 'decrement', to: 'cart#decrement'
 
   resources :onlyphones
   root "onlyphones#index"

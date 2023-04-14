@@ -9,18 +9,21 @@ class CartController < OnlyphonesController
     @phone_in_cart_name = phone_in_cart['data']['name']
     @phone_in_cart_price = phone_in_cart['data']['prices'][0]['price']
 
-    @counter = 1
+    session[:counter] ||= 1
 
   end
 
-  def increase
-    @counter += 1
-    redirect_to carrito_path
+  def increment
+    session[:counter] += 1
+    render json: { value: session[:counter] }
   end
 
-  def decrease
-    @counter -= 1
-    redirect_to carrito_path
+  def decrement
+    if session[:counter] == 0
+      session[:counter] ||= 1
+    end 
+    session[:counter] -= 1
+    render json: { value: session[:counter] }
   end
 
 end
