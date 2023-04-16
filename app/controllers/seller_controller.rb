@@ -1,0 +1,2 @@
+class SellerController < OnlyphonesController
+end

@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm seller-border" >
+      <div style="display: flex; flex-wrap: wrap;" class="d-flex logo justify-content-center">
+        <div>
+          <p class="logo-normal-v1 me-1"> <span class="s-title">O</span> nly<span class="s-title">-P</span> hones</p>
+          <p class="logo-normal me-1"> <span class="s-title2">S</span> eller</p> 
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-auto">
+          <p class="profile-pic"></p>
+        </div>
+        <div class="col-sm d-inline">
+          <p class="mb-0"> Seller</p>
+          <p class="gray-font"> seller@email.com</p>
+        </div>
+      </div>
+      <button type="button" class="btn button-yellow button-pos border rounded-3 me-3"> Log Out </button>  
+    </div>
+       
+    <div class="col-8 mx-5">
+      <p class="title" >Unidades</p>
+      <br>
+      <input placeholder="Buscar Telefono" class="form-control" type="search" id="example-search-input">
+      <br>
+      <button type="button" class="btn button-blue border rounded-3 me-3 "> Nuevo Telefono </button>   
+      <div  class="row seller-card mt-4">
+        <div class="col-sm d-flex justify-content-center mt-4">
+          <%= @random_phone[2] ? ( image_tag "#{@random_phone[2]}", alt: "Telefono", class: "img-limitator-sell" ) : ( image_tag "https://picsum.photos/200", alt: "Telefono", class: "w-50") %>
+        </div>
+        <div class="col-8 mt-3">
+          <p class="fw-bolder"> <%= @random_phone[0] %> </p>
+          <p class="fw-bolder"> $<%= @random_phone[1] %></p>
+          <p class="gray-font"> Cantidad ordenados</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit <p>
+          <p class="sm-sell"> Show more</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
