@@ -100,9 +100,16 @@ li:hover{
 }
 
 //Seller phones
-.button-yellow{
+.button-yellow,
+.button-yellow:link,
+.button-yellow:active{
   background-color: #C89137;
   color: var(--white-color);
+}
+
+.button-yellow:hover {
+  background-color: var(--white-color);
+  color: #C89137;
 }
 .seller-border{
   border: none;
