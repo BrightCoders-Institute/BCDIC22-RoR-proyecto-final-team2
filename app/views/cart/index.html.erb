@@ -1,3 +1,4 @@
+
 <main class="container">
   <div class="d-flex">
     <div class="d-flex justify-content-between flex-column flex-grow-1 mx-3">
@@ -23,8 +24,14 @@
         <%= render 'partials/phone_card_cart' %>
       </div>
       <div class="d-flex justify-content-around">
-        <button type="button" class="btn button-blue border rounded-4 py-3"> Continuar comprando </button>
-        <button type="button" class="btn btn-outline-danger rounded-4 p-3"> Limpiar carrito </button>
+        <%= link_to "Continuar comprando", root_path, class: "btn button-blue border rounded-4 py-3" %>
+        <button type="button" class="btn btn-outline-danger rounded-4 p-3" id="open-popup-limpiar"> Limpiar carrito </button>
+        <div id="popup-container-limpiar">
+          <div id="popup-content">
+            <p>¿Estas seguro de que quieres vaciar tu carrito de compras?</p>
+            <button id="close-popup-limpiar" class="btn btn-outline-danger rounded-circle align-self-center">X</button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="border border-dark d-flex flex-column align-items-center w-25">
@@ -32,15 +39,22 @@
         Total
       </div>
       <div class="m-3 w-75">
-        <div class="d-flex justify-content-between border-bottom border-3   
-                    <p class=" fs-6 fw-bolder">Subtotal</p>
+        <div class="d-flex justify-content-between border-bottom border-3">   
+          <p class=" fs-6 fw-bolder">Subtotal</p>
           <p>$ 23.20</p>
         </div>
         <div class="d-flex justify-content-between">
           <p class="fs-6 fw-bolder">Total a pagar</p>
           <p>$ 23.20</p>
         </div>
-        <button type="button" class="btn btn-success rounded-4 w-100"> Proceder al pago </button>
+        <button type="button" class="btn btn-success rounded-4 w-100" id="open-popup-pago"> Proceder al pago </button>
+        <div id="popup-container-pago">
+          <div id="popup-content">
+            <p>¿Estas seguro de iniciar el proceso de pago?</p>
+            <button id="close-popup-pago" class="btn btn-outline-danger rounded-circle align-self-center">X</button>
+          </div>
+        </div>
+        <%= javascript_include_tag 'popup.js' %>
       </div>
     </div>
   </div>
