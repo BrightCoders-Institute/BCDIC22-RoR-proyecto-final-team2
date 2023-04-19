@@ -1,7 +1,5 @@
 class SellerController < OnlyphonesController
   def index
-    logger.debug "Index method called"
-    puts "Index method called"
     query = params[:query]
     puts "query: #{query}"
     if query
@@ -19,7 +17,6 @@ class SellerController < OnlyphonesController
     list = []
     data_list = request_list['data']
     data_list.each do |element|
-      puts "element: #{element}"
       id = element['id']
       name = element['name']
      

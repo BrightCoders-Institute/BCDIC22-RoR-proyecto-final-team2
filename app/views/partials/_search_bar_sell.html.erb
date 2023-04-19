@@ -6,14 +6,11 @@
     <% end %>
   </div>
   
-  <% puts "Entering the if block" %>
-  <% if @sell.present? %>
-  <% puts "Entering the if block" %>
+  <% if @sell.present? %> 
     <ul class="m-1 list-inline w-75">
       <% @sell.each do |result| %>
         <li class="p-2 bg-opacity-10 border rounded w-75 list-inline-item align-middle">
-        <%= puts result[0]%>
-        <a> Producto<%= result[1] %> - <%= result[0] %></a>
+          <a> Producto<%= result[1] %> - <%= result[0] %></a>
         </li>
       <% end %>
     </ul>
@@ -21,4 +18,3 @@
     <p>No se encontraron resultados.</p>
   <% end %>
 </div>
-
