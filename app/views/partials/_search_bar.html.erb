@@ -1,0 +1,21 @@
+<div class="m-2 w-25 align-self-center">
+  <div class="input-group w-75"> 
+    <%= form_tag comparador_path, method: :get, class: "input-group w-75" do %>
+      <%= text_field_tag :query, nil, class: "form-control", placeholder: "Buscar telefono" %>
+      <%= submit_tag "Buscar", class: "btn button-blue" %>
+    <% end %>
+  </div>
+  <% if @results.present? %>
+    <ul class="m-1 list-inline w-75">
+      <% @results.each do |result| %>
+        <li class="p-2 bg-opacity-10 border rounded w-75 list-inline-item align-middle">
+          <%= puts result[0]%>
+          <%= link_to "Producto #{result.join(" ")}", compare_path(id2: result[0]) %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No se encontraron resultados.</p>
+  <% end %>
+</div>
+

@@ -2,13 +2,14 @@
   <div class="border border-dark mx-5 rounded-1"> 
     <div class="d-flex justify-content-evenly">
       <%= render 'partials/comparador_info' %>
-      <div class="w-25 align-self-center d-flex justify-content-center">
-        <div class="input-group w-75">
-          <input type="text" placeholder="Buscar Telefono" class="form-control">
-          <button type="button" class="btn button-blue" id="button-addon2"> Buscar </button>
+      <%= render 'partials/search_bar' %>
+      <% if @id2 != nil %>
+        <%= render 'partials/comparador_info_to_compare' %>
+      <% else %>
+        <div class="d-inline-flex flex-column justify-content-center">
+          <div class="fw-bold fs-3"> Busca un telefono para comparar</div>
         </div>
-      </div>
-      <%= render 'partials/comparador_info' %>
+      <% end %>
     </div>
   </div>
 </main>
