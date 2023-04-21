@@ -1,6 +1,3 @@
-require "rest-client"
-require "json"
-require_relative "./api_key"
 class MarcasController < OnlyphonesController
 
   def index
