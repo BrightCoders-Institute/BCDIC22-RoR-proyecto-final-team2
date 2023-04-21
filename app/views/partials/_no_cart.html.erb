@@ -1,0 +1,11 @@
+<main class="no-cart">
+  <h1 class="text-center mt-5"> Para acceder al carrito de compra por favor registrate o inicia sesión </h1>
+  <div class="d-flex justify-content-center m-4">
+    <%= link_to "Registrarse", new_user_registration_path(), class: "mt-0 btn btn-dark border border-3 rounded-4 m-4 w-25 fs-4" %>
+    <%= link_to "Inicia Sesión", new_user_session_path(), class: "mt-0 btn button-blue border border-3 rounded-4 m-4 w-25 fs-4" %>
+  </div>
+  <div class="d-flex justify-content-center">
+    <%= image_tag "cart.png", alt: "cart", class: "align-self-center" %>
+  </div>
+</main>
+

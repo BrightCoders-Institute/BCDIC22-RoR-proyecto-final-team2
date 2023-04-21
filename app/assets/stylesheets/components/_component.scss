@@ -100,6 +100,15 @@ li:hover{
   max-width: 100%;
 }
 
+.img-info-limitator {
+  height: 350px;
+  width: 350px;
+}
+.img-info-limitator img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
 /* Estilos del contenedor del pop-up */
 #popup-container-pago, #popup-container-limpiar  {
   display: none;
@@ -124,5 +133,9 @@ li:hover{
   margin: auto;
   padding: 20px;
   border-radius: 5px;
+}
+
+.no-cart{
+  height: 60vh;
 }
 

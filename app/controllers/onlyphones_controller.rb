@@ -13,7 +13,15 @@ class OnlyphonesController < ApplicationController
   
   def show
     @phone = request_api
-    @phone_img = @phone['data']['images'][0]['url']
+    begin
+      @phone_img = @phone['data']['images'][0]['url']
+    rescue NoMethodError => e
+      if e.message.include?("undefined method `[]' for nil:NilClass") 
+        @phone_img = "https://picsum.photos/200" 
+      else
+        @phone_img = @phone['data']['images'][0]['url']
+      end
+    end
     @price = @phone['data']['prices'][0]['price']
     @currency = @phone['data']['prices'][0]['currency']
   end
