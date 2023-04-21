@@ -28,8 +28,12 @@
         <button type="button" class="btn btn-outline-danger rounded-4 p-3" id="open-popup-limpiar"> Limpiar carrito </button>
         <div id="popup-container-limpiar">
           <div id="popup-content">
+            <button id="close-popup-limpiar-x" class="btn-close align-self-end"></button>
             <p>¿Estas seguro de que quieres vaciar tu carrito de compras?</p>
-            <button id="close-popup-limpiar" class="btn btn-outline-danger rounded-circle align-self-center">X</button>
+            <div class="d-flex justify-content-around">
+              <button id="close-popup-limpiar-button" class="btn btn-outline-success">Mantener carrito</button>
+              <button class="btn btn-outline-danger">Vaciar carrito</button>
+            </div>
           </div>
         </div>
       </div>
@@ -50,8 +54,12 @@
         <button type="button" class="btn btn-success rounded-4 w-100" id="open-popup-pago"> Proceder al pago </button>
         <div id="popup-container-pago">
           <div id="popup-content">
+            <button id="close-popup-pago-x" class="btn-close align-self-end"></button>
             <p>¿Estas seguro de iniciar el proceso de pago?</p>
-            <button id="close-popup-pago" class="btn btn-outline-danger rounded-circle align-self-center">X</button>
+            <div class="d-flex justify-content-around">
+              <button class="btn btn-outline-success">Proceder</button>
+              <button id="close-popup-pago-button" class="btn btn-outline-danger">Cancelar</button>
+            </div>
           </div>
         </div>
         <%= javascript_include_tag 'popup.js' %>

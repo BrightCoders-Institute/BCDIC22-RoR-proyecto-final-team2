@@ -22,6 +22,7 @@ class OnlyphonesController < ApplicationController
     rd = rand 1..2597
     params[:id] = rd
     random_phone = request_api
+    id = random_phone['data']['id']
     name = random_phone['data']['name']
     price = random_phone['data']['prices'][0]['price']
     begin
@@ -33,7 +34,7 @@ class OnlyphonesController < ApplicationController
         img = random_phone['data']['images'][0]['url']
       end
     end
-    [name, price, img]
+    [name, price, img, id]
   end
 
   def request_bestphones
@@ -51,6 +52,7 @@ class OnlyphonesController < ApplicationController
     phones = request_bestphones
     array_phones = []
     for i in 0..7
+      id = phones[i]['data']['id']
       name = phones[i]['data']['name']
       price = phones[i]['data']['prices'][0]['price']
         begin
@@ -62,7 +64,7 @@ class OnlyphonesController < ApplicationController
            img = phones[i]['data']['images'][0]['url']
           end
         end
-       array_phones << [name, price, img]       
+       array_phones << [name, price, img, id]       
     end
     array_phones
   end
