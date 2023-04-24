@@ -13,3 +13,4 @@ Rails.application.routes.draw do
   resources :onlyphones
   root "onlyphones#index"
 end
+
