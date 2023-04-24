@@ -18,11 +18,10 @@
           </div>
         </div>
         <button id="increment" type="button" class="btn btn-primary border border-primary rounded-end">+</button>     
-        <%= javascript_include_tag 'counter.js' %>
 			</div>
 		</div>
 		<div class="d-flex justify-content-end w-25">
-			<div class="align-self-center mx-2"><b> $ <%= @phone_in_cart_price %></b></div>
+			<div class="align-self-center mx-2" id="total"><b> <%= session[:total_cart] %> </b></div>
 			<div class="btn btn-outline-danger rounded-circle align-self-center">X</div>
 		</div>
 	</div>

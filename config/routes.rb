@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'carrito', to: 'cart#index'
   get 'phone/:id', to: 'onlyphones#show', as: 'phone'
 
+  post 'onlyphones/create', to: 'onlyphones#create', as: 'create'
   post 'increment', to: 'cart#increment'
   post 'decrement', to: 'cart#decrement'
 

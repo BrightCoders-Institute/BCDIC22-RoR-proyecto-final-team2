@@ -14,8 +14,10 @@ function updateCounter(action) {
   xhr.setRequestHeader("X-CSRF-Token", csrfToken);
   xhr.onload = function() {
     if (xhr.status === 200) {
-      const counter = JSON.parse(xhr.response);
-      document.getElementById("contador").textContent = counter.value;
+      const response = JSON.parse(xhr.response);
+      document.getElementById("contador").textContent = response.value;
+      document.getElementById("total").textContent = response.total_value;
+      document.getElementById("total_lateral").textContent = response.total_value;
     }
   };
   xhr.send();

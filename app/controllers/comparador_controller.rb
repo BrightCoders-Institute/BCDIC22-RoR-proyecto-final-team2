@@ -10,6 +10,7 @@ class ComparadorController < OnlyphonesController
         @img = comparador_data['data']['images'][0]['url']
       end
     end
+    @ide = comparador_data['data']['id']
     @nombre = comparador_data['data']['name']
     @precio = comparador_data['data']['prices'][0]['price']
     @pantalla = comparador_data['data']['data']['display']['size__inch']
@@ -81,8 +82,9 @@ class ComparadorController < OnlyphonesController
     camara_to_compare = info_to_compare['data']['data']['camera']['camera_back__mp']
     procesador_to_compare = info_to_compare['data']['data']['cpu']['type']
     so_to_compare = info_to_compare['data']['data']['software']['os']
+    id_to_compare = info_to_compare['data']['id']
 
-    [img_to_compare, nombre_to_compare, precio_to_compare, pantalla_to_compare, memoria_to_compare, camara_to_compare, procesador_to_compare, so_to_compare]
+    [img_to_compare, nombre_to_compare, precio_to_compare, pantalla_to_compare, memoria_to_compare, camara_to_compare, procesador_to_compare, so_to_compare, id_to_compare]
   end
 
   def list_to_search(query="")

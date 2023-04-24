@@ -42,14 +42,11 @@
         <div class="border border-dark fw-bolder fs-4 w-100 text-center">
           Total
         </div>
-        <div class="m-3 w-75">
-          <div class="d-flex justify-content-between border-bottom border-3">   
-            <p class=" fs-6 fw-bolder">Subtotal</p>
-            <p>$ 23.20</p>
-          </div>
+        <div class="m-3 w-75 pt-5">
           <div class="d-flex justify-content-between">
             <p class="fs-6 fw-bolder">Total a pagar</p>
-            <p>$ 23.20</p>
+            <p id="total_lateral"><%= session[:total_cart] %></p>
+            <%= javascript_include_tag 'counter.js' %>
           </div>
           <button type="button" class="btn btn-success rounded-4 w-100" id="open-popup-pago"> Proceder al pago </button>
           <div id="popup-container-pago">
