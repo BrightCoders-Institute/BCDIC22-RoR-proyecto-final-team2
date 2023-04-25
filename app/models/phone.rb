@@ -1,3 +1,3 @@
 class Phone < ApplicationRecord
-  belongs_to :users
+  belongs_to :user, class_name: 'User'
 end

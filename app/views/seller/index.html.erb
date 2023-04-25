@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm seller-border" >
+    <div class="col-sm seller-border">
       <div style="display: flex; flex-wrap: wrap;" class="d-flex logo justify-content-center">
         <div>
-          <p class="logo-normal-v1 me-1"> <span class="s-title">O</span> nly<span class="s-title">-P</span> hones</p>
-          <p class="logo-normal me-1"> <span class="s-title2">S</span> eller</p> 
+          <p class="logo-normal-v1 me-1"> <span class="s-title">O</span>nly<span class="s-title">-P</span>hones </p>
+          <p class="logo-normal me-1"> <span class="s-title2">S</span>eller </p>
         </div>
       </div>
       <% if user_signed_in? %>
@@ -13,42 +13,80 @@
             <p class="profile-pic"></p>
           </div>
           <div class="col-sm d-inline">
-            <p class="mb-0"><%= current_user.name %> </p>
-            <p class="gray-font">  <%= current_user.email %></p>
+            <p class="mb-0"><%= current_user.name %></p>
+            <p class="gray-font"><%= current_user.email %></p>
           </div>
         </div>
         <%= link_to "Cerrar sesión", destroy_user_session_path(), class: "btn button-yellow button-pos border rounded-3 me-3", data: { turbo_method: :delete } %>
       <% else %>
-
         <div class="row mt-4">
           <div class="col-auto">
             <p class="profile-pic"></p>
           </div>
           <div class="col-sm d-inline">
-            <p class="mb-0">Seller </p>
-            <p class="gray-font"> seller@email.com</p>
+            <p class="mb-0">Seller</p>
+            <p class="gray-font">seller@email.com</p>
           </div>
         </div>
-        <button type="button" class="btn button-yellow button-pos border rounded-3 me-3"> Log Out </button>
+        <button type="button" class="btn button-yellow button-pos border rounded-3 me-3">Log Out</button>
       <% end %>
     </div>
-       
     <div class="col-8 mx-5">
-      <p class="title" >Unidades</p>
-      <br>
-      <div>
-      <%= render 'partials/search_bar_sell' %>
-      </div> 
-      <div  class="row seller-card mt-4">
-        <div class="col-sm d-flex justify-content-center mt-4">
+      <p class="title">Unidades</p><br>
+      
+      <%= render 'partials/search_bar_sell' %><br>
+      
+      <%= form_with(model: @phone, url: add_phone_path, method: :post) do |f| %>
+        <% if @selected_phones.any? %>
+          <h3> Celular seleccionado:</h3>
+          <% @selected_phones.each do |phone| %>
+            <div class="row seller-card mt-4 mb-5 justify-content-evenly">
+              <div class="col-sm d-flex justify-content-center mt-3 mb-3">
+                <img src="<%= phone.image_url %>", alt: "Telefono", style="height: 150px;" ><br>
+              </div>
+              <div class="col-4 mt-3 ">
+                <p class="fw-bolder mb-1 h5"><%= phone.name %></p>
+                <p class="gray-font">Cantidad ordenados -</p>
+                <p class="fw-bolder h6">$<%= phone.precio %></p>
+                <%= f.hidden_field :image_url, value: phone.image_url %>
+                <%= f.hidden_field :phone_id, value: phone.id %>        
+                <%= f.hidden_field :name, value: phone.name %>        
+                <%= f.hidden_field :precio, value: phone.precio %>  
+                <%= f.submit "Agregar a mi lista", class: "btn button-blue" %>
+              </div>
+              <div class="col-4 d-flex justify-content-center align-items-center">
+                <%= link_to 'Cancelar', seller_path, class: 'btn btn-danger' %>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="d-inline-flex flex-column justify-content-center">
+            <div class="fw-bold fs-3">Busca un telefono para vender</div>
+          </div><br><br>
+        <% end %>
+      <% end %>
+      <% if @phones.any? %>
+        <h3>Mis celulares:</h3>
+        <div class="row seller-card mt-4 justify-content-evenly">  
+          <% @phones.each do |phone| %>  
+            <div class="col-2 d-flex justify-content-center align-items-center" >
+              <img src="<%= phone.image_url %>", alt: "Telefono", style="height: 110px;">
+            </div>
+            <div class="col-6 mt-2 mx-2">
+              <div class="row mt-2 alt-info ">
+                <p id="prim-renglon" class="fw-bolder mt-4"><%= phone.name %></p>
+                <p class="gray-font">Cantidad ordenados -</p>
+                <p id="ult-renglon"class="fw-bolder">$<%= phone.precio %></p>  
+              </div>
+            </div>
+            <div class="col-2 d-flex justify-content-center align-items-center">  <%= button_to 'Borrar', destroy_phone_path(phone.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></div>
+            <p id="separador"></p>
+          <% end %>
         </div>
-        <div class="col-8 mt-3">
-          
-          <p class="gray-font"> Cantidad ordenados</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit <p>
-          <p class="sm-sell"> Show more</p>
-        </div>
-      </div>
+      <% else %>
+        <div class="fw-bold fs-3">Aun no agregas ningun celular.</div>
+      <% end %>
     </div>
   </div>
 </div>
+    

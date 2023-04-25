@@ -140,7 +140,7 @@ li:hover{
  font-weight: bold;
 }
 .seller-card{
-  border: 1.5px solid #ebeff2;
+  border: 2.7px solid #ebeff2;
   border-radius: 5px;
 }
 .phones-size-seller{
@@ -153,6 +153,7 @@ li:hover{
 }
 .img-limitator-sell {
   height: 170px;
+  margin-bottom: 25px;
 }
 .sm-sell{
   color:#0D6EFD;
@@ -171,4 +172,21 @@ li:hover{
 .logo-normal-v1{
   font-weight: normal;
   margin-bottom: 0; 
+}
+#ult-renglon{
+  padding-bottom: 70px;
+}
+#separador{
+  border-bottom: 2px solid #ebeff2;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+#prim-renglon{
+  height: 25px;
+  margin: 0;
+  padding: 0;
+}
+.alt-info{
+  height: 180px;
 }
