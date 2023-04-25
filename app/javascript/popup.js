@@ -1,5 +1,5 @@
 function togglePopup(containerId, displayValue) {
-  var container = document.getElementById(containerId);
+  let container = document.getElementById(containerId);
   container.style.display = displayValue;
 }
 
