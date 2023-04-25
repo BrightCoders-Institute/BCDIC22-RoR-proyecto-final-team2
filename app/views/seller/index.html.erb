@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm seller-border">
-      <div style="display: flex; flex-wrap: wrap;" class="d-flex logo justify-content-center">
+      <div class="d-flex logo justify-content-center">
         <div>
           <p class="logo-normal-v1 me-1"> <span class="s-title">O</span>nly<span class="s-title">-P</span>hones </p>
           <p class="logo-normal me-1"> <span class="s-title2">S</span>eller </p>
@@ -42,7 +42,7 @@
           <% @selected_phones.each do |phone| %>
             <div class="row seller-card mt-4 mb-5 justify-content-evenly">
               <div class="col-sm d-flex justify-content-center mt-3 mb-3">
-                <img src="<%= phone.image_url %>", alt: "Telefono", style="height: 150px;" ><br>
+                <img src="<%= phone.image_url %>", alt="Telefono", class="phone-card1"><br>
               </div>
               <div class="col-4 mt-3 ">
                 <p class="fw-bolder mb-1 h5"><%= phone.name %></p>
@@ -70,7 +70,7 @@
         <div class="row seller-card mt-4 justify-content-evenly">  
           <% @phones.each do |phone| %>  
             <div class="col-2 d-flex justify-content-center align-items-center" >
-              <img src="<%= phone.image_url %>", alt: "Telefono", style="height: 110px;">
+              <img src="<%= phone.image_url %>", alt="Telefono", class="phone-card2">
             </div>
             <div class="col-6 mt-2 mx-2">
               <div class="row mt-2 alt-info ">

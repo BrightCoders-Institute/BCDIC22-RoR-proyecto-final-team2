@@ -16,14 +16,17 @@ class SellerController < OnlyphonesController
       @sell = []
     end
   
-    @phones = current_user.phones.all
+    if user_signed_in?
+      @phones = current_user.phones.all
+    else
+      redirect_to onlyphones_path
+    end
 
     @selected_phones ||= []
     @selected_phones = [] if @selected_phones.nil?
   
     @phone = Phone.new
 
-    render 'index'
   end
 
   def sell_data
@@ -91,5 +94,4 @@ class SellerController < OnlyphonesController
   def phone_params
     params.require(:phone).permit(:name, :precio, :phone_id, :image_url)
   end
-
 end

@@ -15,6 +15,11 @@
 .logo-normal{
   font-weight: normal;
 }
+.logo-sell{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.5em;
+}
 //a links without styles
 a:link, a:visited, a:active {
   color: var(--black-color);
@@ -189,4 +194,10 @@ li:hover{
 }
 .alt-info{
   height: 180px;
+}
+.phone-card1{
+  height: 150px;
+}
+.phone-card2{
+  height: 110px;
 }
