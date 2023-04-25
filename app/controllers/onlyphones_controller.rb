@@ -12,60 +12,37 @@ class OnlyphonesController < ApplicationController
    @best_phones = bestphones
   end
   
-  def show
-    @phone = request_api
-    begin
-      @phone_img = @phone['data']['images'][0]['url']
-    rescue NoMethodError => e
-      if e.message.include?("undefined method `[]' for nil:NilClass") 
-        @phone_img = "https://picsum.photos/200" 
-      else
-        @phone_img = @phone['data']['images'][0]['url']
-      end
-    end
-    @price = @phone['data']['prices'][0]['price']
-    @currency = @phone['data']['prices'][0]['currency']
-  end
-
   def create
-
     transaccion = Transaccion.new
-
     transaccion.id_comprador = current_user.id
     transaccion.id_vendedor = 1
     transaccion.telefono_id = params[:id]
     transaccion.status = "En carrito"
     transaccion.ganancia = @price
-
     transaccion.save
-    
     @telefonos_id = Transaccion.where(id_comprador: current_user.id, status: 'En carrito').pluck(:telefono_id)
     session[:telefonos_id] = @telefonos_id
-    
     redirect_to carrito_path
-
-
   end
-
+  
+  def show
+    @phone = request_api
+    @phone_img = @phone.dig('data', 'images', 0, 'url') || 'https://picsum.photos/200'
+    @price = @phone.dig('data', 'prices', 0, 'price')
+    @currency = @phone.dig('data', 'prices', 0, 'currency')
+  end
+  
   def random
-    rd = rand 1..2597
+    rd = rand(1..2597)
     params[:id] = rd
     random_phone = request_api
-    id = random_phone['data']['id']
-    name = random_phone['data']['name']
-    price = random_phone['data']['prices'][0]['price']
-    begin
-      img = random_phone['data']['images'][0]['url']
-    rescue NoMethodError => e
-      if e.message.include?("undefined method `[]' for nil:NilClass") 
-        img = "https://picsum.photos/200" 
-      else
-        img = random_phone['data']['images'][0]['url']
-      end
-    end
+    id = random_phone.dig('data', 'id')
+    name = random_phone.dig('data', 'name')
+    price = random_phone.dig('data', 'prices', 0, 'price')
+    img = random_phone.dig('data', 'images', 0, 'url') || 'https://picsum.photos/200'
     [name, price, img, id]
   end
-
+  
   def request_bestphones
     itemid
     responses = []
@@ -73,30 +50,22 @@ class OnlyphonesController < ApplicationController
       params[:id] = id
       response = request_api
       responses << response
-      end
+    end
     responses
   end
-
+  
   def bestphones
     phones = request_bestphones
     array_phones = []
-    for i in 0..7
-      id = phones[i]['data']['id']
-      name = phones[i]['data']['name']
-      price = phones[i]['data']['prices'][0]['price']
-        begin
-          img = phones[i]['data']['images'][0]['url']
-          rescue NoMethodError => e
-          if e.message.include?("undefined method `[]' for nil:NilClass")
-           img = "https://picsum.photos/200"
-          else
-           img = phones[i]['data']['images'][0]['url']
-          end
-        end
-       array_phones << [name, price, img, id]       
+    (0..7).each do |i|
+      id = phones[i].dig('data', 'id')
+      name = phones[i].dig('data', 'name')
+      price = phones[i].dig('data', 'prices', 0, 'price')
+      img = phones[i].dig('data', 'images', 0, 'url') || 'https://picsum.photos/200'
+      array_phones << [name, price, img, id]
     end
     array_phones
-  end
+  end  
 
   private
   def itemid
