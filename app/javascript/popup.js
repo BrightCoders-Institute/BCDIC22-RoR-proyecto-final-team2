@@ -1,23 +1,28 @@
+function togglePopup(containerId, displayValue) {
+  var container = document.getElementById(containerId);
+  container.style.display = displayValue;
+}
+
 document.getElementById('open-popup-pago').addEventListener('click', function() {
-document.getElementById('popup-container-pago').style.display = 'flex';
+  togglePopup('popup-container-pago', 'flex');
 });
 
 document.getElementById('close-popup-pago-x').addEventListener('click', function() {
-document.getElementById('popup-container-pago').style.display = 'none';
+  togglePopup('popup-container-pago', 'none');
 });
 
 document.getElementById('close-popup-pago-button').addEventListener('click', function() {
-document.getElementById('popup-container-pago').style.display = 'none';
+  togglePopup('popup-container-pago', 'none');
 });
 
 document.getElementById('open-popup-limpiar').addEventListener('click', function() {
-document.getElementById('popup-container-limpiar').style.display = 'flex';
+  togglePopup('popup-container-limpiar', 'flex');
 });
 
 document.getElementById('close-popup-limpiar-x').addEventListener('click', function() {
-document.getElementById('popup-container-limpiar').style.display = 'none';
+  togglePopup('popup-container-limpiar', 'none');
 });
 
 document.getElementById('close-popup-limpiar-button').addEventListener('click', function() {
-document.getElementById('popup-container-limpiar').style.display = 'none';
+  togglePopup('popup-container-limpiar', 'none');
 });
