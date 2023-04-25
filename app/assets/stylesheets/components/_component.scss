@@ -8,6 +8,7 @@
 //Logo Styles
 .logo{
   font-size: 1.5em;
+  color: var(--black-color);
 }
 .logo-bold{
   font-weight: bold;
@@ -17,7 +18,6 @@
 }
 //a links without styles
 a:link, a:visited, a:active {
-  color: var(--black-color);
   text-decoration:none;
 }
 //Style button-blue
@@ -91,6 +91,10 @@ li:hover{
   max-width: 100%;
 }
 
+.text-black{
+  color: var(--black-color);
+}
+
 .img-cart-limitator {
   height: 100px;
   width: 100px;
@@ -137,5 +141,79 @@ li:hover{
 
 .no-cart{
   height: 60vh;
+}
+
+//Seller phones
+.button-yellow,
+.button-yellow:link,
+.button-yellow:active{
+  background-color: #C89137;
+  color: var(--white-color);
+}
+
+.button-yellow:hover {
+  background-color: var(--white-color);
+  color: #C89137;
+}
+.seller-border{
+  border: none;
+  box-shadow: 5px 0 5px -2px #888;
+  height: auto;
+  position: relative;
+}
+.button-pos{
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  margin-bottom: 10px;
+  position: absolute;
+  transform: translateX(-50%);
+  width:160px; 
+}
+.profile-pic{
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+.title{
+ border-bottom: 1.5px solid #ebeff2;
+ font-size: 2em;
+ font-weight: bold;
+}
+.seller-card{
+  border: 1.5px solid #ebeff2;
+  border-radius: 5px;
+}
+.phones-size-seller{
+  width: 4em;
+}
+.gray-font{
+  color: #90A0B7;
+  font-size: .8em;
+  margin-top: 0;
+}
+.img-limitator-sell {
+  height: 170px;
+}
+.sm-sell{
+  color:#0D6EFD;
+}
+.logo-seller{
+  font-weight: normal;
+  margin-right: 15px;
+}
+.s-title{
+  font-weight: bold;
+}
+.s-title2{
+  font-weight: bold;
+  padding-left: 40px;
+} 
+.logo-normal-v1{
+  font-weight: normal;
+  margin-bottom: 0; 
 }
 

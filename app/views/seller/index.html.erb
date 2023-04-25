@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm seller-border" >
+      <div style="display: flex; flex-wrap: wrap;" class="d-flex logo justify-content-center">
+        <div>
+          <p class="logo-normal-v1 me-1"> <span class="s-title">O</span> nly<span class="s-title">-P</span> hones</p>
+          <p class="logo-normal me-1"> <span class="s-title2">S</span> eller</p> 
+        </div>
+      </div>
+      <% if user_signed_in? %>
+        <div class="row mt-4">
+          <div class="col-auto">
+            <p class="profile-pic"></p>
+          </div>
+          <div class="col-sm d-inline">
+            <p class="mb-0"><%= current_user.name %> </p>
+            <p class="gray-font">  <%= current_user.email %></p>
+          </div>
+        </div>
+        <%= link_to "Cerrar sesión", destroy_user_session_path(), class: "btn button-yellow button-pos border rounded-3 me-3", data: { turbo_method: :delete } %>
+      <% else %>
+
+        <div class="row mt-4">
+          <div class="col-auto">
+            <p class="profile-pic"></p>
+          </div>
+          <div class="col-sm d-inline">
+            <p class="mb-0">Seller </p>
+            <p class="gray-font"> seller@email.com</p>
+          </div>
+        </div>
+        <button type="button" class="btn button-yellow button-pos border rounded-3 me-3"> Log Out </button>
+      <% end %>
+    </div>
+       
+    <div class="col-8 mx-5">
+      <p class="title" >Unidades</p>
+      <br>
+      <div>
+      <%= render 'partials/search_bar_sell' %>
+      </div> 
+      <div  class="row seller-card mt-4">
+        <div class="col-sm d-flex justify-content-center mt-4">
+        </div>
+        <div class="col-8 mt-3">
+          
+          <p class="gray-font"> Cantidad ordenados</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit <p>
+          <p class="sm-sell"> Show more</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
