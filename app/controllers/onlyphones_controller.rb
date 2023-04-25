@@ -28,9 +28,21 @@ class OnlyphonesController < ApplicationController
 
   def create
 
-    @insert_phone = Transaccions.new(transaccions_params)
+    transaccion = Transaccion.new
 
+    transaccion.id_comprador = current_user.id
+    transaccion.id_vendedor = 1
+    transaccion.telefono_id = params[:id]
+    transaccion.status = "En carrito"
+    transaccion.ganancia = @price
+
+    transaccion.save
+    
+    @telefonos_id = Transaccion.where(id_comprador: current_user.id, status: 'En carrito').pluck(:telefono_id)
+    session[:telefonos_id] = @telefonos_id
+    
     redirect_to carrito_path
+
 
   end
 
@@ -104,10 +116,6 @@ class OnlyphonesController < ApplicationController
     url = "https://api.device-specs.io/api/smartphones?filters[$and][0][name][$contains]=#{filter}&populate=*"
     response = RestClient.get(url, {Authorization: "Bearer #{API_KEY}"})
     JSON.parse(response.to_str)
-  end
-
-  def transaccions_params
-    params.require(:transaccions).permit(@user_id, 1, params[:id], "En carrito", @price) # Especificar los parámetros permitidos para la creación del usuario
   end
 
 end

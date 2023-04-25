@@ -2,8 +2,9 @@ class CartController < OnlyphonesController
 
   def index
 
-    rd = rand 1..2597
-    params[:id] = rd
+    id_telefonos_cart = session[:telefonos_id]
+    id_telefono = id_telefonos_cart[-1]
+    params[:id] = id_telefono
     phone_in_cart = request_api
     @phone_in_cart_img = phone_in_cart['data']['images'][0]['url']
     @phone_in_cart_name = phone_in_cart['data']['name']
@@ -13,6 +14,24 @@ class CartController < OnlyphonesController
     session[:counter] = 1
     @total_cart = session[:total_cart]
 
+  end
+
+  def delete
+    id_telefonos_cart = session[:telefonos_id]
+    id_telefonos_cart_sin_duplicados = id_telefonos_cart.uniq
+
+    Transaccion.where(id: id_telefonos_cart_sin_duplicados).destroy_all
+    redirect_to carrito_path
+  end
+
+  def update
+
+    id_telefonos_cart = session[:telefonos_id]
+    id_telefonos_cart_sin_duplicados = id_telefonos_cart.uniq
+
+    Transaccion.where(id: id_telefonos_cart_sin_duplicados).update_all(status: "Comprado")
+
+    redirect_to root_path
   end
 
   def increment

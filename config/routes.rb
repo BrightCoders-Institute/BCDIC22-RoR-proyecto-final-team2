@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   get 'marcas', to: 'marcas#index'
   get 'carrito', to: 'cart#index'
   get 'phone/:id', to: 'onlyphones#show', as: 'phone'
+  get 'onlyphones/create/:id', to: 'onlyphones#create', as: 'create'
+  get 'carrito/delete', to: 'cart#delete', as: 'delete_cart'
+  get 'carrito/update', to: 'cart#update', as: 'update_cart'
 
-  post 'onlyphones/create', to: 'onlyphones#create', as: 'create'
   post 'increment', to: 'cart#increment'
   post 'decrement', to: 'cart#decrement'
 

@@ -32,7 +32,7 @@
               <p>¿Estas seguro de que quieres vaciar tu carrito de compras?</p>
               <div class="d-flex justify-content-around">
                 <button id="close-popup-limpiar-button" class="btn btn-outline-success">Mantener carrito</button>
-                <button class="btn btn-outline-danger">Vaciar carrito</button>
+                <%= link_to "Vaciar carrito", delete_cart_path, class: "btn btn-outline-danger", method: :get %>
               </div>
             </div>
           </div>
@@ -48,7 +48,7 @@
             <p id="total_lateral"><%= session[:total_cart] %></p>
             <%= javascript_include_tag 'counter.js' %>
           </div>
-          <button type="button" class="btn btn-success rounded-4 w-100" id="open-popup-pago"> Proceder al pago </button>
+          <%= link_to "Proceder al pago", update_cart_path, class: "btn btn-success rounded-4 w-100", id: "open-popup-pago", method: :get %>
           <div id="popup-container-pago">
             <div id="popup-content">
               <button id="close-popup-pago-x" class="btn-close align-self-end"></button>
