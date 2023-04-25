@@ -8,6 +8,7 @@
 //Logo Styles
 .logo{
   font-size: 1.5em;
+  color: var(--black-color);
 }
 .logo-bold{
   font-weight: bold;
@@ -17,7 +18,6 @@
 }
 //a links without styles
 a:link, a:visited, a:active {
-  color: var(--black-color);
   text-decoration:none;
 }
 //Style button-blue
@@ -90,6 +90,11 @@ li:hover{
   max-height: 100%;
   max-width: 100%;
 }
+
+.text-black{
+  color: var(--black-color);
+}
+
 .img-cart-limitator {
   height: 100px;
   width: 100px;
@@ -172,3 +177,6 @@ li:hover{
   font-weight: normal;
   margin-bottom: 0; 
 }
+
+
+
