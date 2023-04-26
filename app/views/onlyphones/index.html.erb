@@ -6,7 +6,7 @@
           <h2 class="fw-bolder"> <%= @random_phone[0] %></h2>
           <br> <br>
           <div class="buutons-group d-flex">
-            <button type="button" class="btn button-blue border rounded-3 me-3"> Comprar ahora </button>
+            <%= link_to "Comprar Ahora", phone_path(id: @random_phone[3]), class: "btn button-blue border rounded-3 me-3" %>
             <%= button_to "Ver otro telefono", request.original_url, method: :get, class: "btn btn-outline-dark border border-3 rounded-3" %>
           </div>
         </div>

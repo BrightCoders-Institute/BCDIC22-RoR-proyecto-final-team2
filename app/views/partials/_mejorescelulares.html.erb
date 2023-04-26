@@ -10,7 +10,8 @@
           <div class="col">
             <p class="fw-bolder"> <%= @best_phones[i][0] %> </p>
             <p class="fw-bolder"> $<%= @best_phones[i][1] %></p>
-            <button type="button" class="mt-0 btn btn-dark border border-3 rounded-4"> Comprar</button>
+            <%= link_to "Ver", phone_path(id: @best_phones[i][3]), class: "mt-0 btn btn-dark border border-3 rounded-4 text-light" %>
+            <%= link_to "Comparar", comparador_path(id: @best_phones[i][3]), class: "mt-0 btn btn-light border border-3 rounded-4" %>
           </div>
         
         </div>
