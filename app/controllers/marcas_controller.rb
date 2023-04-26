@@ -29,7 +29,8 @@ class MarcasController < OnlyphonesController
           img = phones['data'][i]['images'][0]['url']
         end
       end
-      array_brands << [name, price, img]
+      id = phones['data'][i]['id']
+      array_brands << [name, price, img, id]
     end
     array_brands
   end

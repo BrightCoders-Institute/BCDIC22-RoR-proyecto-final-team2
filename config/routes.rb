@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'comparador/:id', to: 'comparador#index', as: 'comparador'
   get 'comparador/:id/:id2', to: 'comparador#index', as: 'compare'
   get 'marcas', to: 'marcas#index'
-  get 'about-us', to: 'about_us#index'
+  get 'about-us', to: 'about_us#index', as: 'us'
   get 'seller', to: 'seller#index'
   get 'seller/:id', to: 'seller#index', as: 'sell'
   get 'carrito', to: 'cart#index'

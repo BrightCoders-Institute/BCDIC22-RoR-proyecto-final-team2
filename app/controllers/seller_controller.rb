@@ -92,6 +92,6 @@ class SellerController < OnlyphonesController
   private
 
   def phone_params
-    params.require(:phone).permit(:name, :precio, :phone_id, :image_url)
+    params.require(:phone).permit(:name, :precio, params[:id], :image_url)
   end
 end
