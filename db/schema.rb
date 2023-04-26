@@ -20,6 +20,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_20_223607) do
     t.float "precio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "image_url"
   end
 
   create_table "transaccions", force: :cascade do |t|

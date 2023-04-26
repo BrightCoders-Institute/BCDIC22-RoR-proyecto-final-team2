@@ -5,12 +5,11 @@
       <%= submit_tag "Buscar", class: "btn button-blue" %>
     <% end %>
   </div>
-  
   <% if @sell.present? %> 
     <ul class="m-1 list-inline w-75">
       <% @sell.each do |result| %>
         <li class="p-2 bg-opacity-10 border rounded w-75 list-inline-item align-middle">
-          <a> Producto<%= result[1] %> - <%= result[0] %></a>
+          <%= link_to "Producto #{result.join(" ")}", seller_path(id: result[0]) %>
         </li>
       <% end %>
     </ul>
