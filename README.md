@@ -1,8 +1,6 @@
 ![BrightCoders Logo](img/logo.png)
 
 
-![BrightCoders Logo](img/logo.png)
-
 # 📱Only-Phones 👀
 
 
