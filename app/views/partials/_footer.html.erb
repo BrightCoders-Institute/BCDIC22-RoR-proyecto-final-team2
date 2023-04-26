@@ -18,9 +18,12 @@
           <h5 class="fw-bold">Inicia</h5>
           <br>
           <ul class="list-unstyled mb-0">
-            <li href="#"> Registro </li>
-            <li href="#"> Iniciar Sesión </li>
-            <li href="#"> Comparador </li>
+            <li>
+              <%= link_to "Registrarte", new_user_registration_path(), class: "text-black" %>
+            </li>
+            <li>
+              <%= link_to "Iniciar Sesión", new_user_session_path(), class: "text-black" %>
+            </li>
           </ul>
         </div> 
 
@@ -28,13 +31,13 @@
           <h5 class="fw-bold">Ofrecemos</h5>
           <br>
           <ul class="list-unstyled mb-0">
-            <li href="#"> Marcas</li>
+            <%= link_to 'Marcas', marcas_path, class: "text-black" %>
             <li href="#"> Ofertas</li>
           </ul>
         </div> 
 
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <a href="#" class="fw-bold text-black fs-5"> Sobre Nosotros </a>
+          <%= link_to 'Sobre Nosotros', us_path, class:'fw-bold text-black fs-5' %>
         </div>
       </div>
       <div class="text-center pt-2">

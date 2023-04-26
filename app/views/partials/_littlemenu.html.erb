@@ -1,13 +1,15 @@
 <div class="little-menu pb-3">
   <ul class="nav justify-content-end">
+   <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to 'Vendedor', seller_path, class:'nav-link text-black'%>
+      </li>
+    <% end %>
     <li class="nav-item">
-      <%= link_to 'Vendedor', seller_path, class:'nav-link'%>
+      <%= link_to 'Marcas', marcas_path, class:'nav-link text-black'%>
     </li>
     <li class="nav-item">
-      <%= link_to 'Marcas', marcas_path, class:'nav-link'%>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-black" href="#">Sobre Nosotros</a>
+      <%= link_to 'Sobre Nosotros', us_path, class:'nav-link text-black' %>
     </li>
   </ul>
 </div>
