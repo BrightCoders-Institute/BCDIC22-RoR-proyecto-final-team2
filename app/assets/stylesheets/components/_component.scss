@@ -104,6 +104,45 @@ li:hover{
   max-width: 100%;
 }
 
+.img-info-limitator {
+  height: 350px;
+  width: 350px;
+}
+.img-info-limitator img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* Estilos del contenedor del pop-up */
+#popup-container-pago, #popup-container-limpiar  {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Estilos del contenido del pop-up */
+#popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.no-cart{
+  height: 60vh;
+}
+
 //Seller phones
 .button-yellow,
 .button-yellow:link,
@@ -177,6 +216,4 @@ li:hover{
   font-weight: normal;
   margin-bottom: 0; 
 }
-
-
 

@@ -1,47 +1,70 @@
-<main class="container">
-  <div class="d-flex">
-    <div class="d-flex justify-content-between flex-column flex-grow-1 mx-3">
-      <div class="d-inline-flex justify-content-between border-bottom border-3">
-        <div class="fw-bold d-flex">
-          <p class="fw-bolder pe-2">P</p>
-          <p class="fw-normal pe-2">roducto </p>
+<% if user_signed_in? %>
+  <main class="container">
+    <div class="d-flex">
+      <div class="d-flex justify-content-between flex-column flex-grow-1 mx-3">
+        <div class="d-inline-flex justify-content-between border-bottom border-3">
+          <div class="fw-bold d-flex">
+            <p class="fw-bolder pe-2">P</p>
+            <p class="fw-normal pe-2">roducto </p>
+          </div>
+          <div class="fw-bold d-flex">
+            <p class="fw-bolder pe-2">P</p>
+            <p class="fw-normal pe-2">recio </p>
+          </div>
+          <div class="fw-bold d-flex">
+            <p class="fw-bolder pe-2">C</p>
+            <p class="fw-normal pe-2">antidad </p>
+          </div>
+          <div class="fw-bold d-flex">
+            <p class="fw-bolder pe-2">S</p>
+            <p class="fw-normal pe-2">ubtotal </p>
+          </div>
         </div>
-        <div class="fw-bold d-flex">
-          <p class="fw-bolder pe-2">P</p>
-          <p class="fw-normal pe-2">recio </p>
+        <div>
+          <%= render 'partials/phone_card_cart' %>
         </div>
-        <div class="fw-bold d-flex">
-          <p class="fw-bolder pe-2">C</p>
-          <p class="fw-normal pe-2">antidad </p>
-        </div>
-        <div class="fw-bold d-flex">
-          <p class="fw-bolder pe-2">S</p>
-          <p class="fw-normal pe-2">ubtotal </p>
+        <div class="d-flex justify-content-around">
+          <%= link_to "Continuar comprando", root_path, class: "btn button-blue border rounded-4 py-3" %>
+          <button type="button" class="btn btn-outline-danger rounded-4 p-3" id="open-popup-limpiar"> Limpiar carrito </button>
+          <div id="popup-container-limpiar">
+            <div id="popup-content">
+              <button id="close-popup-limpiar-x" class="btn-close align-self-end"></button>
+              <p>¿Estas seguro de que quieres vaciar tu carrito de compras?</p>
+              <div class="d-flex justify-content-around">
+                <button id="close-popup-limpiar-button" class="btn btn-outline-success">Mantener carrito</button>
+                <%= link_to "Vaciar carrito", delete_cart_path, class: "btn btn-outline-danger", method: :get %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div>
-        <%= render 'partials/phone_card_cart' %>
-      </div>
-      <div class="d-flex justify-content-around">
-        <button type="button" class="btn button-blue border rounded-4 py-3"> Continuar comprando </button>
-        <button type="button" class="btn btn-outline-danger rounded-4 p-3"> Limpiar carrito </button>
+      <div class="border border-dark d-flex flex-column align-items-center w-25">
+        <div class="border border-dark fw-bolder fs-4 w-100 text-center">
+          Total
+        </div>
+        <div class="m-3 w-75 pt-5">
+          <div class="d-flex justify-content-between">
+            <p class="fs-6 fw-bolder">Total a pagar</p>
+            <p id="total_lateral"><%= session[:total_cart] %></p>
+            <%= javascript_include_tag 'counter.js' %>
+          </div>
+          <%= link_to "Proceder al pago", update_cart_path, class: "btn btn-success rounded-4 w-100", id: "open-popup-pago", method: :get %>
+          <div id="popup-container-pago">
+            <div id="popup-content">
+              <button id="close-popup-pago-x" class="btn-close align-self-end"></button>
+              <p>¿Estas seguro de iniciar el proceso de pago?</p>
+              <div class="d-flex justify-content-around">
+                <button class="btn btn-outline-success">Proceder</button>
+                <button id="close-popup-pago-button" class="btn btn-outline-danger">Cancelar</button>
+              </div>
+            </div>
+          </div>
+          <%= javascript_include_tag 'popup.js' %>
+        </div>
       </div>
     </div>
-    <div class="border border-dark d-flex flex-column align-items-center w-25">
-      <div class="border border-dark fw-bolder fs-4 w-100 text-center">
-        Total
-      </div>
-      <div class="m-3 w-75">
-        <div class="d-flex justify-content-between border-bottom border-3   
-                    <p class=" fs-6 fw-bolder">Subtotal</p>
-          <p>$ 23.20</p>
-        </div>
-        <div class="d-flex justify-content-between">
-          <p class="fs-6 fw-bolder">Total a pagar</p>
-          <p>$ 23.20</p>
-        </div>
-        <button type="button" class="btn btn-success rounded-4 w-100"> Proceder al pago </button>
-      </div>
-    </div>
-  </div>
-</main>
+  </main>
+<% else %>
+  <%= render 'partials/no_cart' %>
+<% end %>
+
