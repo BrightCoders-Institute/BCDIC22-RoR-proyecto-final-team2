@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="d-flex align-items-center">
+    <div class="text-section">
+      <h2 class="fw-bold">Quienes somos?</h2>
+      <p class="w-75">Somos una plataforma que integra una herramienta y tienda en línea que te permite analizar una
+        gran variedad de teléfonos disponibles en el mercado, al igual que te permite comprar y vender telefonos.</p>
+      <%= link_to "Empieza a comprar", root_path, class: "btn button-blue border rounded-5 me-3" %>
+    </div>
+    <div class="img-section">
+      <%= image_tag "samsung-img.jpg" , alt: "Sign up" , class: "sign-up-img about-us" %>
+    </div>  
+  </div>
+
+  <div class="brands-section">
+    <div>
+      <h2 class="pt-5 fw-bold text-center">Marcas</h2>
+      <div class="marcas d-flex justify-content-evenly align-items-center">
+        <a href="#">
+          <%= image_tag "apple-logo.png" , alt: "Apple" , class: "p-3" %>
+        </a>
+        <a href="#">
+          <%= image_tag "samsung-logo.png" , alt: "Samsung" , class: "p-3" %>
+        </a>
+        <a href="#">
+          <%= image_tag "xiaomi-logo.png" , alt: "Xiaomi" , class: "p-3" %>
+        </a>
+        <a href="#">
+          <%= image_tag "motorola-logo.png" , alt: "Motorola" , class: "p-3" %>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+

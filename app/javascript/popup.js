@@ -1,28 +1,20 @@
 function togglePopup(containerId, displayValue) {
-  var container = document.getElementById(containerId);
+  let container = document.getElementById(containerId);
   container.style.display = displayValue;
 }
 
-document.getElementById('open-popup-pago').addEventListener('click', function() {
-  togglePopup('popup-container-pago', 'flex');
-});
+function setupPopupListeners(popupId, containerId) {
+  document.getElementById(`open-popup-${popupId}`).addEventListener('click', function() {
+    togglePopup(`popup-container-${containerId}`, 'flex');
+  });
+  document.getElementById(`close-popup-${popupId}-x`).addEventListener('click', function() {
+    togglePopup(`popup-container-${containerId}`, 'none');
+  });
+  document.getElementById(`close-popup-${popupId}-button`).addEventListener('click', function() {
+    togglePopup(`popup-container-${containerId}`, 'none');
+  });
+}
 
-document.getElementById('close-popup-pago-x').addEventListener('click', function() {
-  togglePopup('popup-container-pago', 'none');
-});
+setupPopupListeners('pago', 'pago');
 
-document.getElementById('close-popup-pago-button').addEventListener('click', function() {
-  togglePopup('popup-container-pago', 'none');
-});
-
-document.getElementById('open-popup-limpiar').addEventListener('click', function() {
-  togglePopup('popup-container-limpiar', 'flex');
-});
-
-document.getElementById('close-popup-limpiar-x').addEventListener('click', function() {
-  togglePopup('popup-container-limpiar', 'none');
-});
-
-document.getElementById('close-popup-limpiar-button').addEventListener('click', function() {
-  togglePopup('popup-container-limpiar', 'none');
-});
+setupPopupListeners('limpiar', 'limpiar');
